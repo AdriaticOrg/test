@@ -5,4 +5,4 @@ This separate app has a purpose to test combination of:
 - Adriatic Localization (code-adl)
 - Adriatic Setup (setup-adl)
 
-Responsible person: [Gregor Alujevič](/gregoral)
+Responsible person: [Gregor Alujevič](@gregoral)
