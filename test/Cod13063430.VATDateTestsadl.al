@@ -5,12 +5,10 @@ codeunit 13063430 "VAT Date Tests-adl"
     TestPermissions = Disabled;
 
     var
-        isInitialized: Boolean;
         Assert: Codeunit Assert;
+        LibraryTestHelp: Codeunit "Library Test Help-adl";
         LibraryVariableStorage: Codeunit "Library - Variable Storage";
         LibrarySetupStorage: Codeunit "Library - Setup Storage";
-        LibraryApplicationArea: Codeunit "Library - Application Area";
-        LibraryPatterns: Codeunit "Library - Patterns";
         LibraryERMCountryData: Codeunit "Library - ERM Country Data";
         LibraryRandom: Codeunit "Library - Random";
         LibraryERM: Codeunit "Library - ERM";
@@ -18,33 +16,31 @@ codeunit 13063430 "VAT Date Tests-adl"
         LibraryInventory: Codeunit "Library - Inventory";
         LibrarySetupAdl: codeunit "Library Setup-adl";
         LibraryFiscalYear: Codeunit "Library - Fiscal Year";
+        isInitialized: Boolean;
 
     local procedure Initialize();
     var
-        GeneralPostingSetup: Record "General Posting Setup";
         VATPostingSetup: Record "VAT Posting Setup";
     begin
-        LibraryVariableStorage.Clear;
-        LibrarySetupStorage.Restore;
+        LibraryVariableStorage.Clear();
+        LibrarySetupStorage.Restore();
         //??SalesHeader.DontNotifyCurrentUserAgain(SalesHeader.GetModifyBillToCustomerAddressNotificationId);
         //??SalesHeader.DontNotifyCurrentUserAgain(SalesHeader.GetModifyCustomerAddressNotificationId);
 
         if isInitialized then
             exit;
 
-        LibraryApplicationArea.EnableFoundationSetup;
+        LibrarySetupAdl.InitializeBasicSetupTables();
 
-        LibraryPatterns.SETNoSeries;
-        LibrarySales.SetPostedNoSeriesInSetup;
         LibraryERM.FindVATPostingSetup(VATPostingSetup, VATPostingSetup."VAT Calculation Type"::"Normal VAT");
 
-        LibrarySetupAdl.CreateGenPostingGroupGetAccounts;
-        LibrarySetupAdl.CreateInventoryPostingSetupGetAccounts;
+        LibrarySetupAdl.CreateGenPostingGroupGetAccounts();
+        LibrarySetupAdl.CreateInventoryPostingSetupGetAccounts();
 
-        LibraryERMCountryData.CreateVATData;
-        LibraryERMCountryData.UpdateGeneralLedgerSetup;
-        LibraryERMCountryData.UpdateSalesReceivablesSetup;
-        LibraryERMCountryData.UpdateGeneralPostingSetup;
+        LibraryERMCountryData.CreateVATData();
+        LibraryERMCountryData.UpdateGeneralLedgerSetup();
+        LibraryERMCountryData.UpdateSalesReceivablesSetup();
+        LibraryERMCountryData.UpdateGeneralPostingSetup();
         LibrarySetupStorage.Save(DATABASE::"Sales & Receivables Setup");
         LibrarySetupStorage.Save(DATABASE::"General Ledger Setup");
 
@@ -55,16 +51,69 @@ codeunit 13063430 "VAT Date Tests-adl"
     var
         InventoryPeriod: Record "Inventory Period";
     begin
-        LibraryFiscalYear.CreateFiscalYear;
+        LibraryFiscalYear.CreateFiscalYear();
         PostingDate := LibraryFiscalYear.GetLastPostingDate(FALSE);
         LibraryInventory.CreateInventoryPeriod(InventoryPeriod, PostingDate);
+    end;
+
+    procedure CreateItemSalesEntities();
+    var
+        Customer: Record Customer;
+        UnitOfMeasure: Record "Unit of Measure";
+        InventoryPostingSetup: Record "Inventory Posting Setup";
+        ItemNo: Code[20];
+        PostingDate: Date;
+    begin
+        // note: item creation requires unit of measure
+        LibraryInventory.FindUnitOfMeasure(UnitOfMeasure);
+        ItemNo := LibraryInventory.CreateItemNo();
+        PostingDate := CreateFiscalYearAndInventoryPeriod();
+
+        InventoryPostingSetup.FindFirst();
+        LibrarySales.CreateCustomerWithLocationCode(Customer, InventoryPostingSetup."Location Code");
     end;
 
     [ConfirmHandler]
     procedure ConfirmHandler(ConfirmMessage: Text[1024]; var Result: Boolean);
     begin
-        ;
         Result := TRUE;
+    end;
+
+    [Test]
+    procedure TestCreateItemSalesEntities();
+    begin
+        Initialize();
+        CreateItemSalesEntities();
+    end;
+
+    [Test]
+    [HandlerFunctions('ConfirmHandler')]
+    procedure CreateSalesInvoiceUsingSalesInvoicePage();
+    var
+        Customer: Record Customer;
+        Currency: Record Currency;
+        InventoryPostingSetup: Record "Inventory Posting Setup";
+        SalesInvoicePage: TestPage "Sales Invoice";
+        ItemNo: Code[20];
+        DocumentNo: Code[20];
+    begin
+        // Setup
+        Initialize();
+        CreateItemSalesEntities();
+        ItemNo := LibraryInventory.CreateItemNo();
+        InventoryPostingSetup.FindFirst();
+        LibrarySales.CreateCustomerWithLocationCode(Customer, InventoryPostingSetup."Location Code");
+
+        SalesInvoicePage.OpenEdit();
+        SalesInvoicePage.New();
+        SalesInvoicePage."Sell-to Customer No.".Value(Customer."No.");
+
+        SalesInvoicePage.SalesLines."No.".VALUE(ItemNo);
+        SalesInvoicePage.SalesLines.Quantity.VALUE(FORMAT(LibraryRandom.RandInt(5)));
+        SalesInvoicePage."Currency Code".VALUE(Currency.Code);
+        DocumentNo := LibraryTestHelp.ToCode20(SalesInvoicePage."No.".VALUE());
+        SalesInvoicePage.Release.Invoke();
+        SalesInvoicePage.CLOSE();
     end;
 
     [Test]
@@ -72,48 +121,31 @@ codeunit 13063430 "VAT Date Tests-adl"
     procedure UpdateVATDateOnSalesInvoicePage();
     var
         Customer: Record Customer;
-        SalesInvoicePage: TestPage "Sales Invoice";
-        UnitOfMeasure: Record "Unit of Measure";
-        SalesHeader: Record "Sales Header";
-        SalesLine: Record "Sales Line";
-        ItemNo: Code[20];
         Currency: Record Currency;
-        DocumentNo: Code[20];
-        PostedDocumentNo: Code[20];
-        PostingDate: Date;
         InventoryPostingSetup: Record "Inventory Posting Setup";
-        SalesInvoiceHeader: Record "Sales Invoice Header";
+        SalesInvoicePage: TestPage "Sales Invoice";
+        ItemNo: Code[20];
+        DocumentNo: Code[20];
+        PostingDate: Date;
     begin
         // Setup
-        Initialize;
-
-        // note: item creation requires unit of measure
-        LibraryInventory.FindUnitOfMeasure(UnitOfMeasure);
+        Initialize();
+        CreateItemSalesEntities();
         ItemNo := LibraryInventory.CreateItemNo();
-        PostingDate := CreateFiscalYearAndInventoryPeriod;
-
         InventoryPostingSetup.FindFirst();
         LibrarySales.CreateCustomerWithLocationCode(Customer, InventoryPostingSetup."Location Code");
-
 
         SalesInvoicePage.OpenEdit();
         SalesInvoicePage.New();
         SalesInvoicePage."Sell-to Customer No.".Value(Customer."No.");
         SalesInvoicePage."VAT Date-adl".Value(Format(PostingDate));
 
-        //TODO: The field with ID = 2 is not found on the page. ( ApplicationArea #Advanced )
-        //SalesInvoicePage.SalesLines.Type.VALUE(FORMAT(SalesLine.Type::Item));
         SalesInvoicePage.SalesLines."No.".VALUE(ItemNo);
         SalesInvoicePage.SalesLines.Quantity.VALUE(FORMAT(LibraryRandom.RandInt(5)));
         SalesInvoicePage."Currency Code".VALUE(Currency.Code);
-        //SalesInvoicePage."Posting Date".SetValue(PostingDate);
-        DocumentNo := SalesInvoicePage."No.".VALUE;
-        SalesInvoicePage.CLOSE;
-
-        SalesHeader.SetCurrentKey("Document Type", "No.");
-        SalesHeader.SetCurrentKey("Document Type", "No.");
-        SalesHeader.GET(SalesHeader."Document Type"::Invoice, DocumentNo);
-        PostedDocumentNo := LibrarySales.PostSalesDocument(SalesHeader, FALSE, TRUE);
+        DocumentNo := LibraryTestHelp.ToCode20(SalesInvoicePage."No.".VALUE());
+        SalesInvoicePage.Release.Invoke();
+        SalesInvoicePage.CLOSE();
     end;
 
     [Test]
@@ -121,25 +153,20 @@ codeunit 13063430 "VAT Date Tests-adl"
     procedure UpdateVATDateOnSalesInvoicePageAndPostSalesInvoice();
     var
         Customer: Record Customer;
-        SalesInvoicePage: TestPage "Sales Invoice";
-        UnitOfMeasure: Record "Unit of Measure";
         SalesHeader: Record "Sales Header";
-        SalesLine: Record "Sales Line";
-        ItemNo: Code[20];
         Currency: Record Currency;
+        SalesInvoiceHeader: Record "Sales Invoice Header";
+        InventoryPostingSetup: Record "Inventory Posting Setup";
+        SalesInvoicePage: TestPage "Sales Invoice";
+        ItemNo: Code[20];
         DocumentNo: Code[20];
         PostedDocumentNo: Code[20];
         PostingDate: Date;
-        InventoryPostingSetup: Record "Inventory Posting Setup";
-        SalesInvoiceHeader: Record "Sales Invoice Header";
     begin
         // Setup
-        Initialize;
-
-        LibraryInventory.FindUnitOfMeasure(UnitOfMeasure);
+        Initialize();
+        CreateItemSalesEntities();
         ItemNo := LibraryInventory.CreateItemNo();
-        PostingDate := CreateFiscalYearAndInventoryPeriod;
-
         InventoryPostingSetup.FindFirst();
         LibrarySales.CreateCustomerWithLocationCode(Customer, InventoryPostingSetup."Location Code");
 
@@ -148,17 +175,12 @@ codeunit 13063430 "VAT Date Tests-adl"
         SalesInvoicePage."Sell-to Customer No.".Value(Customer."No.");
         SalesInvoicePage."VAT Date-adl".Value(Format(PostingDate));
 
-        //TODO: The field with ID = 2 is not found on the page. ( ApplicationArea #Advanced )
-        //SalesInvoicePage.SalesLines.Type.VALUE(FORMAT(SalesLine.Type::Item));
         SalesInvoicePage.SalesLines."No.".VALUE(ItemNo);
         SalesInvoicePage.SalesLines.Quantity.VALUE(FORMAT(LibraryRandom.RandInt(5)));
         SalesInvoicePage."Currency Code".VALUE(Currency.Code);
-        //SalesInvoicePage."Posting Date".SetValue(PostingDate);
-        DocumentNo := SalesInvoicePage."No.".VALUE;
+        DocumentNo := LibraryTestHelp.ToCode20(SalesInvoicePage."No.".VALUE());
 
-        //TODO: Unhandled UI: Confirm
-        //Confirm.Test = T.SalesHeader.DocumentNotPostedClosePageQst ( not public )
-        SalesInvoicePage.CLOSE;
+        SalesInvoicePage.CLOSE();
 
         SalesHeader.SetCurrentKey("Document Type", "No.");
         SalesHeader.SetCurrentKey("Document Type", "No.");
