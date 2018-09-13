@@ -24,4 +24,6 @@ This separate app has a purpose to test combination of:
 
 > Responsible person: [Gregor Alujevič](https://github.com/gregoral)
 
->   
+## TEST SCENARIOS
+
+[Unpaid Receivables](UnpaidReceivables.md)
