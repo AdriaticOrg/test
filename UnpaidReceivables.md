@@ -1,4 +1,7 @@
-# CASE 1
+# Unpaid Receivables
+
+
+## CASE 1
 
 ### Enter Sales & Rec. Setup:
 - Extended Data Start Balance Date: enter date
@@ -32,9 +35,10 @@
 
 ### Error:
 
-- Customer Ledger Entry doesn't have entered amounts in additional fields in ext. Table 21 so entries can't be printed.
+- Customer Ledger Entry doesn't have entered amounts in 
+additional fields in ext. Table 21 so entries can't be printed.
 
-# CASE 2
+## CASE 2
 
 ### Enter Sales & Rec. Setup:
 
@@ -71,7 +75,7 @@
 
 - Customer Ledger Entry doesn't have entered amounts in additional fields in ext. Table 21 so entries can't be printed.
 
-# CASE 3
+## CASE 3
 
 ### Enter Sales & Rec. Setup:
 
