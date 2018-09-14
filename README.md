@@ -29,4 +29,5 @@ This separate app has a purpose to test combination of:
 
 ### GL
 
-[Unpaid Receivables](UnpaidReceivables.md)
+[Unpaid Receivables](UnpaidReceivables.md)<br>
+[Forced Debit/Credit Posting](ForcedDebitCrediPosting)
