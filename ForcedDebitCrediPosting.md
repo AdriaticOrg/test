@@ -5,7 +5,9 @@
 ### G/L Account Card:
 
 - Debit/Credit: choose Debit
-Enter Journal with data: 
+
+### Enter Journal with data: 
+
 - Posting Date
 - Account Type: G/L Account
 - Account No.: G/L Account No.
@@ -16,6 +18,7 @@ Enter Journal with data:
 Post Journal
 
 ### Error: 
+
 - General Ledger Entry is posted to Credit Amount.
 
 ## CASE 2
@@ -40,7 +43,7 @@ Post Journal
 
 - General Ledger Entry is posted to Debit Amount.
 
-## CASE 3:
+## CASE 3
 
 ### G/L Account Card:
 
