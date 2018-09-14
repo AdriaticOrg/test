@@ -27,4 +27,6 @@ This separate app has a purpose to test combination of:
 
 ## TEST SCENARIOS
 
+### GL
+
 [Unpaid Receivables](UnpaidReceivables.md)
