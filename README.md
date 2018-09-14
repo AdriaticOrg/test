@@ -25,6 +25,7 @@ This separate app has a purpose to test combination of:
 > Responsible person: [Gregor Alujevič](https://github.com/gregoral)
 
 
+
 ## TEST SCENARIOS
 
 ### GL
@@ -38,6 +39,7 @@ This separate app has a purpose to test combination of:
 
 
 ### SP
+
 
 
 ### VAT
