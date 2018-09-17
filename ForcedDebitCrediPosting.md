@@ -15,7 +15,8 @@
 - Credit Amount
 - Balance Account Type: G/L Account
 - Balance Account No.: G/L Account No.
-Post Journal
+
+### Post Journal
 
 ### Error: 
 
