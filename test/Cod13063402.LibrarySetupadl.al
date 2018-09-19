@@ -9,6 +9,7 @@ codeunit 13063402 "Library Setup-adl"
         LibrarySales: Codeunit "Library - Sales";
         LibraryInventory: Codeunit "Library - Inventory";
         LibraryWarehouse: Codeunit "Library - Warehouse";
+        LibraryUtility: Codeunit "Library - Utility";
 
     procedure InitializeCoreSetupTable(ADL: Boolean; VAT: Boolean; FAS: Boolean; KRD: Boolean; BST: Boolean; VIES: Boolean; UnpaidReceivables: Boolean);
     var
@@ -92,5 +93,23 @@ codeunit 13063402 "Library Setup-adl"
             "Subcontracted Variance Account" := LibraryERM.CreateGLAccountNo();
             Modify(true);
         end;
+    end;
+
+    procedure CreateFASInstrument(var FASInstrumentAdl: Record "FAS Instrument-Adl")
+    begin
+        FASInstrumentAdl.Init();
+        FASInstrumentAdl.Type := FASInstrumentAdl.Type::Posting;
+        FASInstrumentAdl.Code := LibraryUtility.GenerateRandomCode(
+            FASInstrumentAdl.FieldNo(Code), Database::"FAS Instrument-Adl");
+        FASInstrumentAdl.Insert();
+    end;
+
+    procedure CreateFASSector(var FASSectordl: Record "FAS Sector-Adl")
+    begin
+        FASSectordl.Init();
+        FASSectordl.Type := FASSectordl.Type::Posting;
+        FASSectordl.Code := LibraryUtility.GenerateRandomCode(
+            FASSectordl.FieldNo(Code), Database::"FAS Instrument-Adl");
+        FASSectordl.Insert();
     end;
 }
