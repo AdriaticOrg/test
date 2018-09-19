@@ -14,6 +14,7 @@ codeunit 13063431 "Page Extensions Tests-Adl"
         LibraryRandom: Codeunit "Library - Random";
         LibraryERM: Codeunit "Library - ERM";
         LibrarySales: Codeunit "Library - Sales";
+        LibraryPurchase: Codeunit "Library - Purchase";
         LibraryInventory: Codeunit "Library - Inventory";
         LibrarySetupAdl: codeunit "Library Setup-adl";
         LibraryFiscalYear: Codeunit "Library - Fiscal Year";
@@ -158,6 +159,120 @@ codeunit 13063431 "Page Extensions Tests-Adl"
         MyTestPage.Close();
     end;
 
+    [Test]
+    [HandlerFunctions('FASInstrumentCancelPageHandler,FASSectorCancelPageHandler')]
+
+    procedure GLAccountListAdl();
+    var
+        FASInstrumentAdl: Record "FAS Instrument-Adl";
+        FASSectorAdl: Record "FAS Sector-Adl";
+        MyRec: Record "G/L Account";
+        MyTestPage: TestPage "G/L Account Card";
+    begin
+        Initialize();
+
+        // Prepare Record for the Page
+        PrepareGLAccForFAS(MyRec, FASInstrumentAdl, FASSectorAdl);
+
+        // Open Page and go to Record
+        MyTestPage.OpenEdit();
+        MyTestPage.GoToRecord(MyRec);
+
+        // Invoke random actions on all additional fields on page
+        MyTestPage."FAS Account-Adl".Activate();
+        MyTestPage."FAS Instrument Code-Adl".Lookup();
+        MyTestPage."FAS Sector Code-Adl".Lookup();
+
+        MyTestPage.Close();
+    end;
+
+    [Test]
+    [HandlerFunctions('FASInstrumentCancelPageHandler,FASSectorCancelPageHandler,BSTCancelPageHandler,CountriesRegionsCancelPageHandler')]
+    procedure GeneralLedgerEntriesAdl();
+    var
+        FASInstrumentAdl: Record "FAS Instrument-Adl";
+        FASSectorAdl: Record "FAS Sector-Adl";
+        MyRec: Record "G/L Entry";
+        MyTestPage: TestPage "General Ledger Entries";
+    begin
+        Initialize();
+
+        // Prepare Record for the Page
+        if not MyRec.FindLast() then begin
+            MyRec."Entry No." := 1;
+            MyRec.Insert(false);
+        end;
+
+        // Open Page and go to Record
+        MyTestPage.OpenEdit();
+        MyTestPage.GoToRecord(MyRec);
+
+        // Invoke random actions on all additional fields on page 
+        MyTestPage."FAS Type-Adl".Activate();
+        MyTestPage."FAS Instrument Code-Adl".Lookup();
+        MyTestPage."FAS Sector Code-Adl".Lookup();
+        MyTestpage."Country/Region Code-Adl".Lookup();
+        MyTestPage."BST Code-Adl".Lookup();
+
+        // Invoke all additional actions
+        MyTestPage."ChangeBST-Adl".Invoke();
+        MyTestPage."ChangeFinInstr-Adl".Invoke();
+        MyTestPage."ChangeFinSect-Adl".Invoke();
+
+        MyTestPage.Close();
+    end;
+
+    [Test]
+    [HandlerFunctions('FASSectorCancelPageHandler,KRDCodesCancelPageHandler,VendorListCancelPageHandler')]
+    procedure CustomerCardAdl();
+    var
+        MyRec: Record "Customer";
+        MyTestPage: TestPage "Customer Card";
+    begin
+        Initialize();
+
+        // Prepare Record for the Page
+        LibrarySales.CreateCustomer(MyRec);
+
+        // Open Page and go to Record
+        MyTestPage.OpenEdit();
+        MyTestPage.GoToRecord(MyRec);
+
+        // Set random values on all additional fields on page
+        MyTestPage."FAS Sector Code-Adl".Lookup();
+        MyTestPage."KRD Affiliation Type-Adl".Lookup();
+        Mytestpage."KRD Non-Residnet Sector Code-Adl".Lookup();
+
+        // Invoke all additional actions
+        MyTestPage."Vendors-Adl".Invoke();
+
+        MyTestPage.Close();
+    end;
+
+    [Test]
+    [HandlerFunctions('FASSectorCancelPageHandler,KRDCodesCancelPageHandler')]
+    procedure VendorCardAdl();
+    var
+        MyRec: Record "Vendor";
+        MyTestPage: TestPage "Vendor Card";
+    begin
+        Initialize();
+
+        // Prepare Record for the Page
+        LibraryPurchase.CreateVendor(MyRec);
+
+        // Open Page and go to Record
+        MyTestPage.OpenEdit();
+        MyTestPage.GoToRecord(MyRec);
+
+        // Set random values on all additional fields on page
+        MyTestPage."FAS Sector Code-Adl".Lookup();
+        MyTestPage."KRD Affiliation Type-Adl".Lookup();
+        Mytestpage."KRD Non-Residnet Sector Code-Adl".Lookup();
+
+        MyTestPage.Close();
+    end;
+
     local procedure PrepareGLAccForFAS(var GLAcc: Record "G/L Account"; var FASInstrumentAdl: Record "FAS Instrument-Adl"; var FASSectorAdl: Record "FAS Sector-Adl")
     begin
         FASInstrumentAdl.SetRange(Type, FASInstrumentAdl.Type::Posting);
@@ -170,5 +285,41 @@ codeunit 13063431 "Page Extensions Tests-Adl"
 
         if NOT GLAcc.FindFirst() then
             LibraryERM.CreateGLAccount(GLAcc);
+    end;
+
+    [ModalPageHandler]
+    procedure FASInstrumentCancelPageHandler(var FASInstrumentsAdl: TestPage "FAS Instruments-Adl")
+    begin
+        FASInstrumentsAdl.Cancel().Invoke();
+    end;
+
+    [ModalPageHandler]
+    procedure FASSectorCancelPageHandler(var FASSectorsAdl: TestPage "FAS Sectors-Adl")
+    begin
+        FASSectorsAdl.Cancel().Invoke();
+    end;
+
+    [ModalPageHandler]
+    procedure BSTCancelPageHandler(var BSTCodesAdl: TestPage "BST Codes-Adl")
+    begin
+        BSTCodesAdl.Cancel().Invoke();
+    end;
+
+    [ModalPageHandler]
+    procedure CountriesRegionsCancelPageHandler(var CountriesRegions: TestPage "Countries/Regions")
+    begin
+        CountriesRegions.Cancel().Invoke();
+    end;
+
+    [ModalPageHandler]
+    procedure KRDCodesCancelPageHandler(var KRDCodes: TestPage "KRD Codes-Adl")
+    begin
+        KRDCodes.Cancel().Invoke();
+    end;
+
+    [ModalPageHandler]
+    procedure VendorListCancelPageHandler(var VendorList: TestPage "Vendor List")
+    begin
+        VendorList.Cancel().Invoke();
     end;
 }
