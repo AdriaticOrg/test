@@ -10,7 +10,7 @@ codeunit 13063402 "Library Setup-adl"
         LibraryInventory: Codeunit "Library - Inventory";
         LibraryWarehouse: Codeunit "Library - Warehouse";
 
-    procedure InitializeCoreSetupTable(ADL: Boolean; VAT: Boolean; RepHR: Boolean; RepRS: Boolean; RepSI: Boolean; FAS: Boolean; KRD: Boolean; BST: Boolean; VIES: Boolean; EUCustoms: Boolean; UnpaidReceivables: Boolean);
+    procedure InitializeCoreSetupTable(ADL: Boolean; VAT: Boolean; FAS: Boolean; KRD: Boolean; BST: Boolean; VIES: Boolean; UnpaidReceivables: Boolean);
     var
         CoreSetup: Record "CoreSetup-Adl";
     begin
@@ -21,14 +21,10 @@ codeunit 13063402 "Library Setup-adl"
             Init();
             "ADL Enabled" := ADL;
             "VAT Enabled" := VAT;
-            "Rep HR Enabled" := RepHR;
-            "Rep RS Enabled" := RepRS;
-            "Rep SI Enabled" := RepSI;
             "FAS Enabled" := FAS;
             "KRD Enabled" := KRD;
             "BST Enabled" := BST;
             "VIES Enabled" := VIES;
-            "EU Customs" := EUCustoms;
             "Unpaid Receivables Enabled" := UnpaidReceivables;
             Insert();
         end;
@@ -38,7 +34,7 @@ codeunit 13063402 "Library Setup-adl"
     begin
         LibraryApplicationArea.EnableFoundationSetup();
 
-        InitializeCoreSetupTable(true, false, false, false, false, false, false, false, false, false, true);
+        InitializeCoreSetupTable(true, false, false, false, false, false, true);
 
         LibraryPatterns.SETNoSeries();
         LibrarySales.SetPostedNoSeriesInSetup();

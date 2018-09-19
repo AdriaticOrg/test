@@ -1,4 +1,4 @@
-codeunit 13063430 "VAT Date Tests-adl"
+codeunit 13063431 "VAT Date Tests-Adl"
 {
     Subtype = Test;
 
@@ -199,10 +199,53 @@ codeunit 13063430 "VAT Date Tests-adl"
     end;
 
     [Test]
-    procedure Test1();
+    [HandlerFunctions('ConfirmHandler')]
+    procedure UpdateVATDateOnSalesInvoicePageAndPostSalesInvoice2();
+    var
+        Customer: Record Customer;
+        SalesHeader: Record "Sales Header";
+        Currency: Record Currency;
+        SalesInvoiceHeader: Record "Sales Invoice Header";
+        InventoryPostingSetup: Record "Inventory Posting Setup";
+        SalesInvoicePage: TestPage "Sales Invoice";
+        ItemNo: Code[20];
+        DocumentNo: Code[20];
+        PostedDocumentNo: Code[20];
+        PostingDate: Date;
     begin
+        // Setup
         Initialize();
-        //LibrarySetupAdl.CreateSetupFotMultiVATComapny();
+        CreateItemSalesEntities();
+        ItemNo := LibraryInventory.CreateItemNo();
+        InventoryPostingSetup.FindFirst();
+        LibrarySales.CreateCustomerWithLocationCode(Customer, InventoryPostingSetup."Location Code");
+
+        SalesInvoicePage.OpenEdit();
+        SalesInvoicePage.New();
+        SalesInvoicePage."Sell-to Customer No.".Value(Customer."No.");
+        SalesInvoicePage."VAT Date-adl".Value(Format(PostingDate));
+
+        SalesInvoicePage.SalesLines."No.".VALUE(ItemNo);
+        SalesInvoicePage.SalesLines.Quantity.VALUE(FORMAT(LibraryRandom.RandInt(5)));
+        SalesInvoicePage."Currency Code".VALUE(Currency.Code);
+        DocumentNo := LibraryTestHelp.ToCode20(SalesInvoicePage."No.".VALUE());
+
+        SalesInvoicePage.CLOSE();
+
+        SalesHeader.SetCurrentKey("Document Type", "No.");
+        SalesHeader.SetCurrentKey("Document Type", "No.");
+        SalesHeader.GET(SalesHeader."Document Type"::Invoice, DocumentNo);
+        PostedDocumentNo := LibrarySales.PostSalesDocument(SalesHeader, FALSE, TRUE);
+
+        SalesInvoiceHeader.SetCurrentKey("No.");
+        SalesInvoiceHeader.GET(PostedDocumentNo);
+
+        //TODO: REMOVE! ( DEBUG.CODE )
+        //Error('VATDate.dbg: PostedVATDate=%1', SalesInvoiceHeader."VAT Date-adl");
+        Assert.AreEqual(PostingDate, SalesInvoiceHeader."VAT Date-adl",
+          STRSUBSTNO('%1 not equal to %2', SalesInvoiceHeader.FieldCaption("VAT Date-adl"), SalesInvoiceHeader.FieldCaption("Posting Date")));
+
+        //VerifyCurrencyInSalesLine(SalesLine."Document Type"::Invoice,DocumentNo,Resource."No.",Currency.Code);
     end;
 
     [Test]
