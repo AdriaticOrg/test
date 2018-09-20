@@ -41,7 +41,7 @@ This separate app has a purpose to test combination of:
 
 ### SP
 
-
+[Sales Documents](SalesDocuments.md)
 
 ### VAT
 
