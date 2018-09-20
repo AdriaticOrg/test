@@ -47,4 +47,6 @@ This separate app has a purpose to test combination of:
 
 [Informative VAT](InformativeVAT.md)<br>
 
-[VAT Books](VATBooks.md)
+[VAT Books](VATBooks.md)<br>
+
+[VAT Date](VATDate.md)
