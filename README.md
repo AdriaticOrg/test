@@ -53,4 +53,4 @@ This separate app has a purpose to test combination of:
 
 [Reverse Charge Posting](ReverseChargePosting.md)<br>
 
-[Postponed VAT](PostopnedReverseChargePosting.md)
+[Postponed VAT](PostponedReverseChargePosting.md)
