@@ -49,4 +49,8 @@ This separate app has a purpose to test combination of:
 
 [VAT Books](VATBooks.md)<br>
 
-[VAT Date](VATDate.md)
+[VAT Date](VATDate.md)<br>
+
+[Reverse Charge Posting](ReverseChargePosting.md)<br>
+
+[Postponed VAT](PostopnedReverseChargePosting.md)
