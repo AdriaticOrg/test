@@ -1,21 +1,21 @@
 {
   "id": "06044fb1-e4fe-4612-bbab-8deb02c9c1ff",
-  "name": "Adriatic Localization - Test",
-  "publisher": "Adriatic.org",
-  "brief": "",
-  "description": "",
+  "name": "Adriatic Localization for Business Central - TEST",
+  "publisher": "Adacta d.o.o.",
+  "brief": "Adriatic localization is compliant with local laws and regulations for Slovenia, Croatia and Serbia.",
+  "description": "Adriatic localization includes: translation into local languages, basic and extended functionality and country-specific reports.",
   "version": "1.0.0.0",
   "privacyStatement": "",
-  "EULA": "",
-  "help": "",
+  "EULA": "https://adriaticorg.github.io/app/ServiceAgreement.html",
+  "help": "https://adriaticorg.github.io/help/",
   "url": "",
-  "logo": "",
+  "logo": "./logo/AdriaticOrg.216x216.png",
   "capabilities": [],
   "dependencies": [
     { 
       "appId": "06044fb1-e4fe-4612-bbab-8deb02c9c1ac", 
       "name": "Adriatic Localization for Business Central",
-      "publisher": "Adriatic.org",
+      "publisher": "Adacta d.o.o.",
       "version": "1.0.0.0" 
     } 
    ],
@@ -27,5 +27,6 @@
   "idRange": {
     "from": 13063401,
     "to": 13063490
-  }
+  },
+  "runtime": "2.0"
 }

@@ -11,7 +11,7 @@ codeunit 13063402 "Library Setup-adl"
         LibraryWarehouse: Codeunit "Library - Warehouse";
         LibraryUtility: Codeunit "Library - Utility";
 
-    procedure InitializeCoreSetupTable(ADL: Boolean; VAT: Boolean; FAS: Boolean; KRD: Boolean; BST: Boolean; VIES: Boolean; UnpaidReceivables: Boolean);
+    procedure InitializeCoreSetup(enabled: Boolean);
     var
         CoreSetup: Record "CoreSetup-Adl";
     begin
@@ -20,22 +20,32 @@ codeunit 13063402 "Library Setup-adl"
         with CoreSetup do begin
             DeleteAll();
             Init();
-            "ADL Enabled" := ADL;
-            "VAT Enabled" := VAT;
-            "FAS Enabled" := FAS;
-            "KRD Enabled" := KRD;
-            "BST Enabled" := BST;
-            "VIES Enabled" := VIES;
-            "Unpaid Receivables Enabled" := UnpaidReceivables;
+            "ADL Enabled" := enabled;
             Insert();
         end;
     end;
+
+    procedure InitializeExtendedSetup(enabled: Boolean; UseVATOutputDate: Boolean);
+    var
+        ExtendedSetup: Record "Extended Setup-Adl";
+    begin
+        with ExtendedSetup do begin
+            DeleteAll();
+            if not enabled then exit;
+            Init();
+            "Use VAT Output Date" := UseVATOutputDate;
+            Insert(true);
+        end;
+    end;
+
+    //TODO: FAS KRD BST VIES UnpaidReceivables
 
     procedure InitializeBasicSetupTables();
     begin
         LibraryApplicationArea.EnableFoundationSetup();
 
-        InitializeCoreSetupTable(true, false, false, false, false, false, true);
+        InitializeCoreSetup(true);
+        InitializeExtendedSetup(true, true);
 
         LibraryPatterns.SETNoSeries();
         LibrarySales.SetPostedNoSeriesInSetup();
@@ -76,6 +86,9 @@ codeunit 13063402 "Library Setup-adl"
         InventoryPostingSetup: Record "Inventory Posting Setup";
     begin
         LibraryWarehouse.CreateLocation(Location);
+
+        LibraryInventory.SetAutomaticCostAdjmtAlways();
+        LibraryInventory.SetAutomaticCostPosting(true);
 
         if not InventoryPostingGroup.FindFirst() then
             LibraryInventory.CreateInventoryPostingGroup(InventoryPostingGroup);

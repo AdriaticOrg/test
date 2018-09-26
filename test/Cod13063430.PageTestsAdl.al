@@ -5,18 +5,18 @@ codeunit 13063430 "Page Tests-Adl"
     TestPermissions = Disabled;
 
     var
-        Assert: Codeunit Assert;
-        LibraryTestHelp: Codeunit "Library Test Help-adl";
+        //UNUSED//Assert: Codeunit Assert;
+        //UNUSED//LibraryTestHelp: Codeunit "Library Test Help-adl";
         LibraryVariableStorage: Codeunit "Library - Variable Storage";
         LibrarySetupStorage: Codeunit "Library - Setup Storage";
         LibraryUtility: Codeunit "Library - Utility";
-        LibraryERMCountryData: Codeunit "Library - ERM Country Data";
+        //UNUSED//LibraryERMCountryData: Codeunit "Library - ERM Country Data";
         LibraryRandom: Codeunit "Library - Random";
         LibraryERM: Codeunit "Library - ERM";
-        LibrarySales: Codeunit "Library - Sales";
-        LibraryInventory: Codeunit "Library - Inventory";
-        LibrarySetupAdl: codeunit "Library Setup-adl";
-        LibraryFiscalYear: Codeunit "Library - Fiscal Year";
+        //UNUSED//LibrarySales: Codeunit "Library - Sales";
+        //UNUSED//LibraryInventory: Codeunit "Library - Inventory";
+        //UNUSED//LibrarySetupAdl: codeunit "Library Setup-adl";
+        //UNUSED//LibraryFiscalYear: Codeunit "Library - Fiscal Year";
         isInitialized: Boolean;
 
     local procedure Initialize();
