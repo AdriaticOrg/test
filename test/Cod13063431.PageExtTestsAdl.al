@@ -5,19 +5,19 @@ codeunit 13063431 "Page Extensions Tests-Adl"
     TestPermissions = Disabled;
 
     var
-        //UNUSED//Assert: Codeunit Assert;
-        //UNUSED//LibraryTestHelp: Codeunit "Library Test Help-adl";
+        Assert: Codeunit Assert;
+        LibraryTestHelp: Codeunit "Library Test Help-adl";
         LibraryVariableStorage: Codeunit "Library - Variable Storage";
         LibrarySetupStorage: Codeunit "Library - Setup Storage";
         LibraryUtility: Codeunit "Library - Utility";
-        //UNUSED//LibraryERMCountryData: Codeunit "Library - ERM Country Data";
-        //UNUSED//LibraryRandom: Codeunit "Library - Random";
+        LibraryERMCountryData: Codeunit "Library - ERM Country Data";
+        LibraryRandom: Codeunit "Library - Random";
         LibraryERM: Codeunit "Library - ERM";
         LibrarySales: Codeunit "Library - Sales";
         LibraryPurchase: Codeunit "Library - Purchase";
-        //UNUSED//LibraryInventory: Codeunit "Library - Inventory";
+        LibraryInventory: Codeunit "Library - Inventory";
         LibrarySetupAdl: codeunit "Library Setup-adl";
-        //UNUSED//LibraryFiscalYear: Codeunit "Library - Fiscal Year";
+        LibraryFiscalYear: Codeunit "Library - Fiscal Year";
         isInitialized: Boolean;
 
     local procedure Initialize();
@@ -28,6 +28,8 @@ codeunit 13063431 "Page Extensions Tests-Adl"
 
         if isInitialized then
             exit;
+
+        LibrarySetupAdl.InitializeBasicSetupTables;
 
         isInitialized := TRUE;
     end;
@@ -41,8 +43,10 @@ codeunit 13063431 "Page Extensions Tests-Adl"
         Initialize();
 
         // Prepare Record for the Page
-        if NOT MyRec.GET('') then
+        if NOT MyRec.GET('') then begin
+            MyRec.Init();
             MyRec.INSERT(false);
+        end;
 
         // Open Page and go to Record
         MyTestPage.OpenEdit();
@@ -160,18 +164,16 @@ codeunit 13063431 "Page Extensions Tests-Adl"
     end;
 
     [Test]
-    //CLR.exception//
     [HandlerFunctions('FASInstrumentCancelPageHandler,FASSectorCancelPageHandler')]
+
     procedure GLAccountListAdl();
     var
         FASInstrumentAdl: Record "FAS Instrument-Adl";
         FASSectorAdl: Record "FAS Sector-Adl";
         MyRec: Record "G/L Account";
-        ADLCore: Codeunit "Adl Core-Adl";
         MyTestPage: TestPage "G/L Account Card";
     begin
         Initialize();
-        ADLCore.EnableFeature("ADLFeatures-Adl"::FAS);
 
         // Prepare Record for the Page
         PrepareGLAccForFAS(MyRec, FASInstrumentAdl, FASSectorAdl);
@@ -180,18 +182,16 @@ codeunit 13063431 "Page Extensions Tests-Adl"
         MyTestPage.OpenEdit();
         MyTestPage.GoToRecord(MyRec);
 
-        // Invoke random actions on all additional fields on page
+        // Lookup and Activate additional fields on page
         MyTestPage."FAS Account-Adl".Activate();
-        //CLR.exception//
         MyTestPage."FAS Instrument Code-Adl".Lookup();
-        //CLR.exception//
         MyTestPage."FAS Sector Code-Adl".Lookup();
 
         MyTestPage.Close();
     end;
 
     [Test]
-    //CLR.exception//[HandlerFunctions('FASInstrumentCancelPageHandler,FASSectorCancelPageHandler,BSTCancelPageHandler,CountriesRegionsCancelPageHandler')]
+    [HandlerFunctions('FASInstrumentCancelPageHandler,FASSectorCancelPageHandler,BSTCancelPageHandler,CountriesRegionsCancelPageHandler')]
     procedure GeneralLedgerEntriesAdl();
     var
         MyRec: Record "G/L Entry";
@@ -201,6 +201,7 @@ codeunit 13063431 "Page Extensions Tests-Adl"
 
         // Prepare Record for the Page
         if not MyRec.FindLast() then begin
+            MyRec.Init();
             MyRec."Entry No." := 1;
             MyRec.Insert(false);
         end;
@@ -209,23 +210,23 @@ codeunit 13063431 "Page Extensions Tests-Adl"
         MyTestPage.OpenEdit();
         MyTestPage.GoToRecord(MyRec);
 
-        // Invoke random actions on all additional fields on page 
+        // Lookup and Activate additional fields on page
         MyTestPage."FAS Type-Adl".Activate();
-        //CLR.exception//MyTestPage."FAS Instrument Code-Adl".Lookup();
-        //CLR.exception//MyTestPage."FAS Sector Code-Adl".Lookup();
-        //CLR.exception//MyTestpage."Country/Region Code-Adl".Lookup();
-        //CLR.exception//MyTestPage."BST Code-Adl".Lookup();
+        MyTestPage."FAS Instrument Code-Adl".Lookup();
+        MyTestPage."FAS Sector Code-Adl".Lookup();
+        MyTestpage."Country/Region Code-Adl".Lookup();
+        MyTestPage."BST Code-Adl".Lookup();
 
         // Invoke all additional actions
-        //CLR.exception//MyTestPage."ChangeBST-Adl".Invoke();
-        //CLR.exception//MyTestPage."ChangeFinInstr-Adl".Invoke();
-        //CLR.exception//MyTestPage."ChangeFinSect-Adl".Invoke();
+        MyTestPage."ChangeBST-Adl".Invoke();
+        MyTestPage."ChangeFinInstr-Adl".Invoke();
+        MyTestPage."ChangeFinSect-Adl".Invoke();
 
         MyTestPage.Close();
     end;
 
     [Test]
-    //CLR.exception//[HandlerFunctions('FASSectorCancelPageHandler,KRDCodesCancelPageHandler,VendorListCancelPageHandler')]
+    [HandlerFunctions('FASSectorCancelPageHandler,KRDCodesCancelPageHandler,KRDSectorsCancelPageHandler')]
     procedure CustomerCardAdl();
     var
         MyRec: Record "Customer";
@@ -240,18 +241,52 @@ codeunit 13063431 "Page Extensions Tests-Adl"
         MyTestPage.OpenEdit();
         MyTestPage.GoToRecord(MyRec);
 
-        // Set random values on all additional fields on page
-        //CLR.exception//MyTestPage."FAS Sector Code-Adl".Lookup();
-        //CLR.exception//MyTestPage."KRD Affiliation Type-Adl".Lookup();
-        //CLR.exception//Mytestpage."KRD Non-Resident Sector Code-Adl".Lookup();
-
-        // Invoke all additional actions
+        // Lookup and Activate additional fields on page
+        MyTestPage."FAS Sector Code-Adl".Lookup();
+        MyTestPage."KRD Affiliation Type-Adl".Lookup();
+        MyTestPage."KRD Non-Resident Sector Code-Adl".Lookup();
 
         MyTestPage.Close();
     end;
 
     [Test]
-    //CLR.exception//[HandlerFunctions('FASSectorCancelPageHandler,KRDCodesCancelPageHandler')]
+    [HandlerFunctions('FASSectorCancelPageHandler,KRDCodesCancelPageHandler,KRDSectorsCancelPageHandler,CountriesRegionsCancelPageHandler')]
+    procedure CustomerLedgerEntryAdl();
+    var
+        MyRec: Record "Cust. Ledger Entry";
+        MyTestPage: TestPage "Customer Ledger Entries";
+    begin
+        Initialize();
+
+        // Prepare Record for the Page
+        if not MyRec.FindLast() then begin
+            MyRec.Init();
+            MyRec."Entry No." := 1;
+            MyRec.Insert(false);
+        end;
+
+        // Open Page and go to Record
+        MyTestPage.OpenEdit();
+        MyTestPage.GoToRecord(MyRec);
+
+        // Lookup and Activate additional fields on page
+        MyTestPage."FAS Sector Code-Adl".Lookup();
+        MyTestPage."KRD Affiliation Type-Adl".Lookup();
+        MyTestPage."KRD Claim/Liability-Adl".Activate();
+        MyTestPage."KRD Country/Region Code-Adl".Lookup();
+        MyTestPage."KRD Instrument Type-Adl".Lookup();
+        MyTestPage."KRD Maturity-Adl".Lookup();
+        MyTestPage."KRD Non-Resident Sector Code-Adl".Lookup();
+        MyTestPage."KRD Other Changes-Adl".Activate();
+
+        // Invoke all additional actions
+        MyTestPage."UnpaidReceivables-Adl".Invoke();
+
+        MyTestPage.Close();
+    end;
+
+    [Test]
+    [HandlerFunctions('FASSectorCancelPageHandler,KRDCodesCancelPageHandler,KRDSectorsCancelPageHandler')]
     procedure VendorCardAdl();
     var
         MyRec: Record "Vendor";
@@ -266,12 +301,117 @@ codeunit 13063431 "Page Extensions Tests-Adl"
         MyTestPage.OpenEdit();
         MyTestPage.GoToRecord(MyRec);
 
-        // Set random values on all additional fields on page
-        //CLR.exception//MyTestPage."FAS Sector Code-Adl".Lookup();
-        //CLR.exception//MyTestPage."KRD Affiliation Type-Adl".Lookup();
-        //CLR.exception//Mytestpage."KRD Non-Resident Sector Code-Adl".Lookup();
+        // Lookup and Activate additional fields on page
+        MyTestPage."FAS Sector Code-Adl".Lookup();
+        MyTestPage."KRD Affiliation Type-Adl".Lookup();
+        Mytestpage."KRD Non-Resident Sector Code-Adl".Lookup();
+        MyTestPage.Close();
+    end;
+
+    [Test]
+    [HandlerFunctions('FASSectorCancelPageHandler,KRDCodesCancelPageHandler,KRDSectorsCancelPageHandler,CountriesRegionsCancelPageHandler')]
+    procedure VendorLedgerEntryAdl();
+    var
+        MyRec: Record "Vendor Ledger Entry";
+        MyTestPage: TestPage "Vendor Ledger Entries";
+    begin
+        Initialize();
+
+        // Prepare Record for the Page
+        if not MyRec.FindLast() then begin
+            MyRec.Init();
+            MyRec."Entry No." := 1;
+            MyRec.Insert(false);
+        end;
+
+        // Open Page and go to Record
+        MyTestPage.OpenEdit();
+        MyTestPage.GoToRecord(MyRec);
+
+        // Lookup and Activate additional fields on page
+        MyTestPage."FAS Sector Code-Adl".Lookup();
+        MyTestPage."KRD Affiliation Type-Adl".Lookup();
+        MyTestPage."KRD Claim/Liability-Adl".Activate();
+        MyTestPage."KRD Country/Region Code-Adl".Lookup();
+        MyTestPage."KRD Instrument Type-Adl".Lookup();
+        MyTestPage."KRD Maturity-Adl".Lookup();
+        MyTestPage."KRD Non-Resident Sector Code-Adl".Lookup();
+        MyTestPage."KRD Other Changes-Adl".Activate();
 
         MyTestPage.Close();
+    end;
+
+    [Test]
+    [HandlerFunctions('FASInstrumentCancelPageHandler,FASSectorCancelPageHandler')]
+    procedure GeneralJournalAdl();
+    var
+        GenJnlTemplate: Record "Gen. Journal Template";
+        GenJnlBatch: Record "Gen. Journal Batch";
+        MyRec: Record "Gen. Journal Line";
+        MyTestPage: TestPage "General Journal";
+    begin
+        Initialize();
+
+        // Make sure that for page ID=39 exist only one template and batch
+        GenJnlTemplate.SetRange("Page ID", 39);
+        GenJnlTemplate.SetRange(Type, GenJnlTemplate.Type::General);
+        GenJnlTemplate.DeleteAll();
+        LibraryERM.CreateGenJournalTemplate(GenJnlTemplate);
+        LibraryERM.CreateGenJournalBatch(GenJnlBatch, GenJnlTemplate.Name);
+
+        // Prepare Record for the Page
+        MyRec.Init();
+        MyRec."Journal Template Name" := GenJnlBatch."Journal Template Name";
+        MyRec."Journal Batch Name" := GenJnlBatch.Name;
+        MyRec."Line No." := 10000;
+        MyRec.Insert(false);
+
+        // Open Page and go to Record
+        MyTestPage.OpenEdit();
+        MyTestPage.GoToRecord(MyRec);
+
+        // Lookup and Activate additional fields on page
+        MyTestPage."Bal. FAS Instrument Code-Adl".Lookup();
+        MyTestPage."Bal. FAS Sector Code-Adl".Lookup();
+        MyTestPage."Bal. FAS Type-Adl".Activate();
+        MyTestPage."FAS Instrument Code-Adl".Lookup();
+        MyTestPage."FAS Sector Code-Adl".Lookup();
+        MyTestPage."FAS Type-Adl".Lookup();
+        MyTestPage."OpenAmounLCYtWithoutUnrealizedERF-Adl".Activate();
+        MyTestPage."OriginalDocumentAmountLCY-Adl".Activate();
+        MyTestPage."OriginalVATAmountLCY-Adl".Activate();
+
+        MyTestPage.Close();
+    end;
+
+    [Test]
+    [HandlerFunctions('NoSeriesListCancelPageHandler,FiscLocationListCancelPageHandler')]
+    procedure SalesQuoteAdl();
+    var
+        MyRec: Record "Sales Header";
+        MyTestPage: TestPage "Sales Quote";
+    begin
+        Initialize();
+
+        // Prepare Record for the Page
+        MyRec.SetRange("Document Type", MyRec."Document Type"::Quote);
+        if not MyRec.FindLast() then begin
+            MyRec.Init();
+            MyRec."No." := LibraryUtility.GenerateRandomCode(MyRec.FieldNo("No."), Database::"Sales Header");
+            MyRec.Insert(false);
+        end;
+
+        // Open Page and go to Record
+        MyTestPage.OpenEdit();
+        MyTestPage.GoToRecord(MyRec);
+
+        // Lookup and Activate additional fields on page
+        MyTestPage."Fisc. Location Code-Adl".Lookup();
+        MyTestPage."Fisc. No. Series-Adl".Lookup();
+        MyTestPage."Fisc. Subject-Adl".Activate();
+        MyTestPage."Fisc. Terminal-Adl".Activate();
+        MyTestPage."Full Fisc. Doc. No.-Adl".Activate();
+
     end;
 
     local procedure PrepareGLAccForFAS(var GLAcc: Record "G/L Account"; var FASInstrumentAdl: Record "FAS Instrument-Adl"; var FASSectorAdl: Record "FAS Sector-Adl")
@@ -319,8 +459,26 @@ codeunit 13063431 "Page Extensions Tests-Adl"
     end;
 
     [ModalPageHandler]
+    procedure KRDSectorsCancelPageHandler(var KRDSectors: TestPage "KRD Sectors-Adl")
+    begin
+        KRDSectors.Cancel().Invoke();
+    end;
+
+    [ModalPageHandler]
     procedure VendorListCancelPageHandler(var VendorList: TestPage "Vendor List")
     begin
         VendorList.Cancel().Invoke();
+    end;
+
+    [ModalPageHandler]
+    procedure FiscLocationListCancelPageHandler(var FiscLocationList: TestPage "Fisc. Location List-Adl")
+    begin
+        FiscLocationList.Cancel().Invoke();
+    end;
+
+    [ModalPageHandler]
+    procedure NoSeriesListCancelPageHandler(var NoSeriesList: TestPage "No. Series List")
+    begin
+        NoSeriesList.Cancel().Invoke();
     end;
 }
