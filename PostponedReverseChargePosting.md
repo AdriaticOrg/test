@@ -30,7 +30,7 @@
 #### Header
 
 -	Vendor Name: Select vendor from list
--	Posting date: Choose posting date. VAT outpute date is same.
+-	Posting date: Choose posting date. VAT output date is same.
 -	VAT date: VAT date is different then posting date.
 -	Postponed VAT: Value is set at Postponed VAT by changing VAT date.
 -	Vendor Invoice No.: Enter external document No.
