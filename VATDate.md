@@ -4,9 +4,9 @@
 
 ### Open Sales Invoice
 
-1. Choose Customer No.
-2. Enter Item on lines.
-3. Enter VAT Date.
+-	Choose Customer No.
+-	Enter Item on lines.
+-	Enter VAT Date.
 
 ### Post Invoice
 
@@ -18,9 +18,9 @@ VAT Date is not entered.
 
 ### Open Purchase Invoice
 
-1. Choose Vendor No.
-2. Enter Item on lines.
-3. Enter VAT Date.
+-	Choose Vendor No.
+-	Enter Item on lines.
+-	Enter VAT Date.
 
 ### Post Invoice
 

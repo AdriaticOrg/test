@@ -4,17 +4,17 @@
 
 ### Open Posted Sales Invoice
 
-1. Choose Posted Sales Invoice
-2. Print Document.
+-	Choose Posted Sales Invoice
+-	Print Document.
 
 ### ERROR:
 
-- Place of issue is not printed on document.
-- Date of issue is not printed on document.
-- Shipment Date is not printed on document.
-- VAT registration for customer is not printed on document.
-- VAT Date is not printed on document.
-- VAT specification (also informative VAT) is not printed on document.
+-	Place of issue is not printed on document.
+-	Date of issue is not printed on document.
+-	Shipment Date is not printed on document.
+-	VAT registration for customer is not printed on document.
+-	VAT Date is not printed on document.
+-	VAT specification (also informative VAT) is not printed on document.
 
 ## CASE 2
 
@@ -25,12 +25,12 @@
 
 ### ERROR:
 
-- Place of issue is not printed on document.
-- Date of issue is not printed on document.
-- Shipment Date is not printed on document.
-- VAT registration for customer is not printed on document.
-- VAT Date is not printed on document.
-- VAT specification (also informative VAT) is not printed on document.
+-	Place of issue is not printed on document.
+-	Date of issue is not printed on document.
+-	Shipment Date is not printed on document.
+-	VAT registration for customer is not printed on document.
+-	VAT Date is not printed on document.
+-	VAT specification (also informative VAT) is not printed on document.
 
 ## CASE 3
 
@@ -41,8 +41,8 @@
 
 ### ERROR:
 
-- Place of issue is not printed on document.
-- Date of issue is not printed on document.
-- Shipment Date is not printed on document.
-- VAT registration for customer is not printed on document.
-- VAT specification (also informative VAT) is not printed on document.
+-	Place of issue is not printed on document.
+-	Date of issue is not printed on document.
+-	Shipment Date is not printed on document.
+-	VAT registration for customer is not printed on document.
+-	VAT specification (also informative VAT) is not printed on document.

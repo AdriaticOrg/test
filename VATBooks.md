@@ -4,30 +4,30 @@
 
 ### Enter VAT Book
 
-1. Create new Code.
+-	Create new Code.
 
 ### Add Columns Setup
 
-1. Enter Column Number.
-2. Enter Description
+-	Enter Column Number.
+-	Enter Description
 
 ### Create VAT Book Group
 
-1. Create new Code.
-2. Enter Description.
-3. Enter VAT Identifier.
+-	Create new Code.
+-	Enter Description.
+-	Enter VAT Identifier.
 
 ### Add content in VAT Book Setup
 
-1. Open column for VAT Identifier.
-2. Choose operator.
-3. Choose Value, for example Base Amount.
-4. Choose additional condition, for example, Purchase.
+-	Open column for VAT Identifier.
+-	Choose operator.
+-	Choose Value, for example Base Amount.
+-	Choose additional condition, for example, Purchase.
 
 ### VAT Review
 
-1. Choose VAT Review from VAT Books.
-2. Enter Date.
+-	Choose VAT Review from VAT Books.
+-	Enter Date.
 
 ### ERROR:
 
