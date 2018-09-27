@@ -7,6 +7,7 @@ codeunit 13063402 "Library Setup-adl"
         LibraryPatterns: Codeunit "Library - Patterns";
         LibraryERM: Codeunit "Library - ERM";
         LibrarySales: Codeunit "Library - Sales";
+        LibraryPurchase: Codeunit "Library - Purchase";
         LibraryInventory: Codeunit "Library - Inventory";
         LibraryWarehouse: Codeunit "Library - Warehouse";
         LibraryUtility: Codeunit "Library - Utility";
@@ -47,8 +48,13 @@ codeunit 13063402 "Library Setup-adl"
         InitializeCoreSetup(true);
         InitializeExtendedSetup(true, true);
 
+        // Set No. Serise in Sales 
         LibraryPatterns.SETNoSeries();
         LibrarySales.SetPostedNoSeriesInSetup();
+
+        // Set No. Series in Purchase
+        SetNoSeriesInPurchaseSetup();
+        LibraryPurchase.SetPostedNoSeriesInSetup();
     end;
 
     procedure CreateGenPostingGroupGetAccounts();
@@ -125,4 +131,29 @@ codeunit 13063402 "Library Setup-adl"
             FASSectordl.FieldNo(Code), Database::"FAS Instrument-Adl");
         FASSectordl.Insert();
     end;
+
+    procedure SetNoSeriesInPurchaseSetup()
+    var
+        PurchasePayablesSetup: Record "Purchases & Payables Setup";
+        NoSeries: Code[20];
+    begin
+        NoSeries := LibraryUtility.GetGlobalNoSeriesCode();
+        with PurchasePayablesSetup do begin
+            Get();
+            if "Quote Nos." <> NoSeries then
+                "Quote Nos." := NoSeries;
+            if "Order Nos." <> NoSeries then
+                "Order Nos." := NoSeries;
+            if "Invoice Nos." <> NoSeries then
+                "Invoice Nos." := NoSeries;
+            if "Credit Memo Nos." <> NoSeries then
+                "Credit Memo Nos." := NoSeries;
+            if "Return Order Nos." <> NoSeries then
+                "Return Order Nos." := NoSeries;
+            if "Vendor Nos." <> NoSeries then
+                "Vendor Nos." := NoSeries;
+            Modify(false);
+        end;
+    end;
+
 }
