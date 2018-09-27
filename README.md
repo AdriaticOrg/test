@@ -40,7 +40,7 @@ This separate app has a purpose to test combination of:
 
 [KRD Report](KRDReport.md)<br>
 
-[VIES Feature](VIESFeature.md)<br>
+[VIES Report](VIESReport.md)<br>
 
 [Delivery Declaration](PDOReport.md)<br>
 
