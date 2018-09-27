@@ -35,7 +35,7 @@
 
 ### Error
 
-- You may not enter numbers manually. If you want to enter numbers manualy, please activate Manual Nos. in No. Series BST.
+- You may not enter numbers manually. If you want to enter numbers manually, please activate Manual Nos. in No. Series BST.
 - Period End Date must have a value in BST Report Header. It cannot be zero or empty. 
-- Status must be equal to 'Open' in BST Report Header. Current value is 'Realeased'.
+- Status must be equal to 'Open' in BST Report Header. Current value is 'Released'.
 - Reporting Name must have a value in User Setup. It cannot be zero or empty.

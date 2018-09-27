@@ -39,7 +39,7 @@
 
 ### Error
 
-- You may not enter numbers manually. If you want to enter numbers manualy, please activate Manual Nos. in No. Series VIES.
+- You may not enter numbers manually. If you want to enter numbers manually, please activate Manual Nos. in No. Series VIES.
 - Period End Date must have a value in PDO Report Header. It cannot be zero or empty. 
 - Status must be equal to 'Open' in PDO Report Header. Current value is 'Realeased'.
 - Reporting Name must have a value in User Setup. It cannot be zero or empty.

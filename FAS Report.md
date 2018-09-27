@@ -17,7 +17,7 @@
 
 ### Edit G/L Account Card 
 
-- Set chack mark in FAS Account, if entries need to be reported in FAS Report.
+- Set check mark in FAS Account, if entries need to be reported in FAS Report.
 - Choose FAS Type (Assets or Liabilities). 
 - Choose appropriate FAS Sector Code. Leave field empty in case the sector that should be applied is set on customer/vendor card.
 - Choose appropriate FAS Instrument Code. 
@@ -52,7 +52,7 @@
 
 ### Error
 
-- You may not enter numbers manually. If you want to enter numbers manualy, please activate Manual Nos. in No. Series FAS.
+- You may not enter numbers manually. If you want to enter numbers manually, please activate Manual Nos. in No. Series FAS.
 - Period End Date must have a value in FAS Report Header. It cannot be zero or empty. 
-- Status must be equal to 'Open' in FAS Report Header. Current value is 'Realeased'.
+- Status must be equal to 'Open' in FAS Report Header. Current value is 'Released'.
 - Reporting Name must have a value in User Setup. It cannot be zero or empty.
