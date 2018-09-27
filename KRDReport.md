@@ -51,5 +51,5 @@
 
 - You may not enter numbers manually. If you want to enter numbers manualy, please activate Manual Nos. in No. Series KRD.
 - Period End Date must have a value in KRD Report Header. It cannot be zero or empty. 
-- Status must be equal to 'Open' in KRD Report Header. Current value is 'Realesed'.
+- Status must be equal to 'Open' in KRD Report Header. Current value is 'Released'.
 - Reporting Name must have a value in User Setup. It cannot be zero or empty.
