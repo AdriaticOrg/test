@@ -5,7 +5,7 @@ This separate app has a purpose to test combination of:
 - Adriatic Localization (code-adl)
 - Adriatic Setup (setup-adl)
 
-## Connect to Azure Sendbox
+## Connect to Azure Sandbox
 
 1. Select country:
 
@@ -38,8 +38,19 @@ This separate app has a purpose to test combination of:
 
 [Detail Trial Balance Extended](DetailTrialBalanceExtended.md)
 
+[KRD Report](KRDReport.md)<br>
+
+[VIES Feature](VIESFeature.md)<br>
+
+[Delivery Declaration](PDOReport.md)<br>
+
+[FAS Report](FASReport.md)<br>
+
+[BST Report](BSTReport.md)<br>
 
 ### SP
+
+[Return Orders](ReturnOrders.md)<br>
 
 [Sales Documents](SalesDocuments.md)
 
