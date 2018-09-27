@@ -32,11 +32,11 @@ This separate app has a purpose to test combination of:
 
 [Unpaid Receivables](UnpaidReceivables.md)<br>
 
-[Forced Debit/Credit Posting](ForcedDebitCrediPosting.md)
+[Forced Debit/Credit Posting](ForcedDebitCrediPosting.md)<br>
 
 ### REP
 
-[Detail Trial Balance Extended](DetailTrialBalanceExtended.md)
+[Detail Trial Balance Extended](DetailTrialBalanceExtended.md)<br>
 
 [KRD Report](KRDReport.md)<br>
 
@@ -52,7 +52,7 @@ This separate app has a purpose to test combination of:
 
 [Return Orders](ReturnOrders.md)<br>
 
-[Sales Documents](SalesDocuments.md)
+[Sales Documents](SalesDocuments.md)<br>
 
 ### VAT
 
@@ -64,4 +64,4 @@ This separate app has a purpose to test combination of:
 
 [Reverse Charge Posting](ReverseChargePosting.md)<br>
 
-[Postponed VAT](PostponedReverseChargePosting.md)
+[Postponed VAT](PostponedReverseChargePosting.md)<br>
