@@ -2,9 +2,10 @@
 
 ## CASE 1
 
-### Open Posted Sales Invoice
+### Posted Sales Invoice
 
--	Choose Posted Sales Invoice
+-	Open Posted Sales Invoices.
+-	Choose Posted Sales Invoice.
 -	Print Document.
 
 ### ERROR:
