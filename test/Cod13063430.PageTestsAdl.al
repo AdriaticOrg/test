@@ -297,6 +297,7 @@ codeunit 13063430 "Page Tests-Adl"
 
         LibraryvariableStorage.Enqueue(CreateKRDCodesCode(KRDCodeType::"Affiliation Type"));
         KRDSetupTestPage."Default KRD Affiliation Type".Lookup();
+
         //KRDSetupTestPage."KRD Blank LCY Code".SetValue(LibraryUtility.GenerateRandomCodeWithLength(KRDSetupAdlRec.FieldNo("KRD Blank LCY Code"), Database::"KRD Setup-Adl", 3));
         //KRDSetupTestPage."KRD Blank LCY Num.".SetValue('978');
 
@@ -493,10 +494,8 @@ codeunit 13063430 "Page Tests-Adl"
 
         VIESSetupTestPage.OpenNew();
 
-        VIESSetupTestPage."Default VIES Country".SetValue(format(VIESSetup."Default VIES Country"::Slovenia));
-
+        VIESSetupTestPage."Default VIES Country".SetValue(VIESSetup."Default VIES Country"::Slovenia);
         Assert.AreEqual(false, VIESSetupTestPage."Default VIES Type".Editable(), 'Default VIES Country field should not be editable');
-        VIESSetupTestPage."Default VIES Type".SetValue(Format(VIESSetupTestPage."Default VIES Type".GetOption(LibraryRandom.RandIntInRange(1, 3))));
 
         NoSeriesCode := LibraryERM.CreateNoSeriesCode();
         LibraryvariableStorage.Enqueue(NoSeriesCode);
@@ -525,10 +524,10 @@ codeunit 13063430 "Page Tests-Adl"
 
         VIESSetupTestPage.OpenNew();
 
-        VIESSetupTestPage."Default VIES Country".SetValue(format(VIESSetup."Default VIES Country"::Slovenia));
+        VIESSetupTestPage."Default VIES Country".SetValue(format(VIESSetup."Default VIES Country"::Croatia));
 
         Assert.AreEqual(true, VIESSetupTestPage."Default VIES Type".Editable(), 'Default VIES Country field should be editable');
-        VIESSetupTestPage."Default VIES Type".SetValue(Format(VIESSetupTestPage."Default VIES Type".GetOption(LibraryRandom.RandIntInRange(1, 3))));
+        //VIESSetupTestPage."Default VIES Type".SetValue(VIESSetup."Default VIES Type"::"PDV-S");
 
         NoSeriesCode := LibraryERM.CreateNoSeriesCode();
         LibraryvariableStorage.Enqueue(NoSeriesCode);
