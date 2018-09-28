@@ -20,8 +20,8 @@
 
 ### Open Posted Sales Credit Memo
 
-1. Choose Posted Sales Credit Memo
-2. Print Document.
+-	Choose Posted Sales Credit Memo
+-	Print Document.
 
 ### ERROR:
 
@@ -36,8 +36,8 @@
 
 ### Open Posted Shipment
 
-1. Choose Posted Sales Shipment
-2. Print Document.
+-	Choose Posted Sales Shipment
+-	Print Document.
 
 ### ERROR:
 

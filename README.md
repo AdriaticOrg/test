@@ -34,6 +34,8 @@ This separate app has a purpose to test combination of:
 
 [Forced Debit/Credit Posting](ForcedDebitCrediPosting.md)<br>
 
+[Red Reversal Posting](RedReversalPosting.md)
+
 ### REP
 
 [Detail Trial Balance Extended](DetailTrialBalanceExtended.md)<br>
@@ -65,3 +67,5 @@ This separate app has a purpose to test combination of:
 [Reverse Charge Posting](ReverseChargePosting.md)<br>
 
 [Postponed VAT](PostponedReverseChargePosting.md)<br>
+
+[Full VAT Posting](FullVATPosting.md)

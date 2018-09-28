@@ -4,11 +4,11 @@
 
 ### Same VAT output date as VAT date
 
-### Enter VAT Setup:
+#### Enter VAT Setup:
 
 -	Use VAT Output Date: No
 
-### VAT posting setup:
+#### VAT posting setup:
 
 -	VAT Bus. Posting Group: Set VAT Bus. Posting Group (A)
 -	VAT Prod. Posting Group: Set VAT Prod. Posting Group (A)
@@ -18,7 +18,7 @@
 -	Purchase VAT Account: Set account (1) for posting
 -	Sale VAT Account: Set account(2) for posting
 
-### G/L Account:
+#### G/L Account:
 
 -	Gen. Prod. Posting Group
 -	VAT Prod. Posting Group (A)
