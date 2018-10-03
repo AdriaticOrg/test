@@ -11,9 +11,9 @@ This separate app has a purpose to test combination of:
 
     Country|Certificate|Application
     -------|-----------|-----------
-    Slovenia|[Cert](http://w1-130-24765-si.westeurope.azurecontainer.io:8080/certificate.cer)|[Nav](https://w1-130-24765-si.westeurope.azurecontainer.io/NAV)
-    Croatia|[Cert](http://w1-130-24765-hr.westeurope.azurecontainer.io:8080/certificate.cer)|[Nav](https://w1-130-24765-hr.westeurope.azurecontainer.io/NAV)
-    Serbia|[Cert](http://w1-130-24765-rs.westeurope.azurecontainer.io:8080/certificate.cer)|[Nav](https://w1-130-24765-rs.westeurope.azurecontainer.io/nav/)
+    Slovenia|[Cert](http://w1-130-24838-si.westeurope.azurecontainer.io:8080/certificate.cer)|[Nav](https://w1-130-24838-si.westeurope.azurecontainer.io/NAV)
+    Croatia|[Cert](http://w1-130-24838-hr.westeurope.azurecontainer.io:8080/certificate.cer)|[Nav](https://w1-130-24838-hr.westeurope.azurecontainer.io/NAV)
+    Serbia|[Cert](http://w1-130-24838-rs.westeurope.azurecontainer.io:8080/certificate.cer)|[Nav](https://w1-130-24838-rs.westeurope.azurecontainer.io/nav/)
 
 2. Download Certificate from selected country (Cert) and place in local machine under Trusted authorization Root. See also: [How to install certificate](https://msdn.microsoft.com/en-us/library/cc750534.aspx?f=255&MSPPError=-2147217396)
 3. Open Application link from selected country (App) and use following passwords.
