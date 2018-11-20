@@ -8,7 +8,7 @@
 -	Choose Posted Sales Invoice.
 -	Print Document.
 
-### ERROR:
+### :
 
 -	Place of issue is not printed on document.
 -	Date of issue is not printed on document.
