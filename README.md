@@ -64,6 +64,8 @@ This separate app has a purpose to test combination of:
 
 [VAT Date](VATDate.md)<br>
 
+[VAT Identifier](VATIdentifier.md)<br>
+
 [Reverse Charge Posting](ReverseChargePosting.md)<br>
 
 [Postponed VAT](PostponedReverseChargePosting.md)<br>
