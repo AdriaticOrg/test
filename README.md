@@ -20,9 +20,9 @@ This separate app has a purpose to test combination of:
 3. Open Application link from selected country (App) and use following passwords:
     > Username: admin<br>
     > Password: Rivo1706<br>
-    W1 password:<br>
-    > Username: admin<br>
-    > Password: Lyxy1715<br>
+
+    > Username: admin (for W1)<br>
+    > Password: Lyxy1715  (for W1)<br>
 4. Accept the license and you are ready to start Business Central.
 5. Note: Those instances will be periodically recreated. That means your data will be lost at next precessing. Protect your data from deletion by exporting data via RapidStart.
 
