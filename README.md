@@ -19,10 +19,10 @@ This separate app has a purpose to test combination of:
 2. Download Certificate from selected country (Cert) and place in local machine under Trusted authorization Root. See also: [How to install certificate](https://msdn.microsoft.com/en-us/library/cc750534.aspx?f=255&MSPPError=-2147217396)
 3. Open Application link from selected country (App) and use following passwords:
     > Username: admin<br>
-    > Password: Rivo1706
-W1 password:
+    > Password: Rivo1706<br>
+> W1 password:<br>
     > Username: admin<br>
-    > Password: Lyxy1715
+    > Password: Lyxy1715<br>
 4. Accept the license and you are ready to start Business Central.
 5. Note: Those instances will be periodically recreated. That means your data will be lost at next precessing. Protect your data from deletion by exporting data via RapidStart.
 
