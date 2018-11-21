@@ -3,9 +3,25 @@
 
 ## CASE 1
 
+### Assisted Setup
+
+-	Open Assisted Setup.
+-	Choose Set up advanced Adriatic Localization.
+-	Program opens wizard.
+-	Go to Next page.
+-	Choose localization country SI.
+-	Enable option BST enabled.
+-	Go to next page.
+-	Check or correct data about company.
+-	Go to next page.
+-	Choose BST Report No. Series to create BST reports.
+-	Choose BST Prepared by user ID that will prepare BST reports when exporting XML file to authorities.
+-	Choose BST Responsible user ID that will be responsible for BST reports when exporting XML file to authorities.
+-	Choose button Finish to confirm setup.
+
 ### Enter BST Codes
 
--	Enter Code, Serial Num., Description.
+-	Enter Code, Serial Number, Description.
 -	Choose Type (Posting or Total). User sets Posting on FAS Sectors that entries can be posted on.
 
 ### Edit G/L Account Card
@@ -14,11 +30,6 @@
 -	Choose appropriate BST Code.
 
 ### Post Invoice
-
-### BST Setup
-
--	Choose BST Report No. Series 
--	Choose Prep. By User ID, Resp. User ID
 
 ### Adjust BST on Entries
 

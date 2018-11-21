@@ -3,6 +3,25 @@
 
 ## CASE 1
 
+### Assisted Setup
+
+-	Open Assisted Setup.
+-	Choose Set up advanced Adriatic Localization.
+-	Program opens wizard.
+-	Go to Next page.
+-	Choose localization country SI.
+-	Enable option KRD enabled.
+-	Go to next page.
+-	Check or correct data about company.
+-	Go to next page.
+-	Choose KRD Report No. Series to create KRD reports.
+-	Choose KRD Responsible user ID that will be responsible for KRD reports when exporting XML file to authorities.
+-	Choose KRD Prepared by user ID that will prepare KRD reports when exporting XML file to authorities.
+-	Choose Default KRD Affiliation Type that applies to company and will be exported to XML file.
+-	Enter KRD Blank LCY Code that will be used for exporting entries that are posted with blank currency. 
+-	Enter KRD Blank LCY Num that will be used for exporting entries that are posted with blank currency.
+-	Choose button Finish to confirm setup.
+
 ### Enter KRD Codes
 
 -	Choose Type: Affiliation Type or Instrument Type or Maturity). 
@@ -25,13 +44,6 @@
 -	Choose appropriate KRD Affiliation Type for the customer/vendor.
 
 ### Post Invoice
-
-### KRD Setup
-
--	Choose KRD Report No. Series 
--	Choose Prep. By User ID, Resp. User ID
--	Enter KRD Blank LCY Code. 
--	Enter KRD Blank LCY Num. 
 
 ### Adjust KRD on Entries
 

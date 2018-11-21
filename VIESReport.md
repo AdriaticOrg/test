@@ -1,7 +1,25 @@
 # TEST SCENARIO: VIES Report
 
-
 ## CASE 1
+
+### Assisted Setup
+
+-	Open Assisted Setup.
+-	Choose Set up advanced Adriatic Localization.
+-	Program opens wizard.
+-	Go to Next page.
+-	Choose localization country SI.
+-	Enable option VIES enabled.
+-	Go to next page.
+-	Check or correct data about company.
+-	Go to next page.
+-	Choose Default VIES County from options Slovenia or Croatia.
+-	Choose Default VIES Type from options ZP or PDV-S if Croatia is set in field VIES Country.
+-	Enter VIES Company Branch Code if company has Branch or enter 00000.
+-	Choose VIES Report No. Series to create VIES reports.
+-	Choose VIES Prepared by user ID that will prepare VIES reports when exporting XML file to authorities.
+-	Choose VIES Responsible user ID that will be responsible for VIES reports when exporting XML file to authorities. 
+-	Choose button Finish to confirm setup.
 
 ### Enter VAT Posting Setup
 
@@ -18,17 +36,9 @@
 -	Enter Item on lines.
 -	Choose VAT Product Posting Group and VAT Business Posting Group that was previously created.
 -	Invoice Details: set a check mark in EU 3-Party Trade if transactions from the document need to be reported in VIES as 3-Party Trade.  
--	Invoice Details: set a check mark in EU Customes Procedure, if transactions from document need to be reported in VIES as transactions from special customs procedures.
+-	Invoice Details: set a check mark in EU Customers Procedure, if transactions from document need to be reported in VIES as transactions from special customs procedures.
 
 ### Post Invoice
-
-### VIES Setup
-
--	Choose Default VIES Country
--	Choose Default VIES Type, if Default VIES Country is Croatia
--	Enter VIES Company Branch Code (or 00000)
--	Choose VIES Report No. Series 
--	Choose Prep. By User ID, Resp. User ID
 
 ### VIES Report
 
@@ -48,5 +58,5 @@
 -	You may not enter numbers manually. If you want to enter numbers manualy, please activate Manual Nos. in No. Series VIES.
 -	VIES Country must not be enter in VIES Report.
 -	Period End Date must have a value in VIES Report Header. It cannot be zero or empty. 
--	Status must be equal to 'Open' in VIES Report Header. Current value is 'Realesed'.
+-	Status must be equal to 'Open' in VIES Report Header. Current value is 'Released'.
 -	Reporting Name must have a value in User Setup. It cannot be zero or empty.

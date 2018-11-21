@@ -2,6 +2,16 @@
 
 ## CASE 1
 
+### Assisted Setup
+
+-	Open Assisted Setup.
+-	Choose Set up basic Adriatic Localization.
+-	Program opens wizard where you accept warning & privacy note for extension.
+-	Go to Next page.
+-	Set option Adriatic Localization Enabled on CORE SETUP section.
+-	Set option Force Debit/Credit on GENERAL LEDGER section.
+-	Choose button Finish to confirm setup.
+
 ### G/L Account Card:
 
 -	Debit/Credit: choose Debit

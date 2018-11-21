@@ -4,9 +4,16 @@
 
 ### VAT date is different than posting date and output VAT date
 
-### Enter VAT Setup:
+### Assisted Setup:
 
--	Use VAT Output Date: No
+-	Open Assisted Setup.
+-	Choose Set up basic Adriatic Localization.
+-	Program opens wizard where you accept warning & privacy note for extension.
+-	Go to Next page.
+-	Set option Adriatic Localization Enabled on CORE SETUP section.
+-	Set option VAT enabled on VAT section.
+-	Disable option Use VAT Output Date on VAT section.
+-	Choose button Finish to confirm setup.
 
 ### VAT posting setup:
 
@@ -52,9 +59,16 @@ VAT entry:
 
 VAT date is different than posting date and output VAT date is different than VAT date and posting date.
 
-### Enter VAT Setup:
+### Assisted Setup:
 
--	Use VAT Output Date: Yes
+-	Open Assisted Setup.
+-	Choose Set up basic Adriatic Localization.
+-	Program opens wizard where you accept warning & privacy note for extension.
+-	Go to Next page.
+-	Set option Adriatic Localization Enabled on CORE SETUP section.
+-	Set option VAT enabled on VAT section.
+-	Enable option Use VAT Output Date on VAT section.
+-	Choose button Finish to confirm setup.
 
 ### VAT posting setup:
 

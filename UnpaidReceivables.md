@@ -3,8 +3,19 @@
 
 ## CASE 1
 
-### Enter Sales & Rec. Setup:
--	Extended Data Start Balance Date: enter date
+### Assisted Setup
+
+-	Open Assisted Setup.
+-	Choose Set up advanced Adriatic Localization.
+-	Program opens wizard.
+-	Go to Next page.
+-	Choose localization country HR.
+-	Enable option Unpaid Receivables Enabled.
+-	Go to next page.
+-	Check or correct data about company.
+-	Go to next page.
+-	Enter Data Start Balance Date that will be used for overdue and unpaid receivables.
+-	Choose button Finish to confirm setup.
 
 ### Enter Journal with data: 
 
@@ -40,9 +51,19 @@ additional fields in ext. Table 21 so entries can't be printed.
 
 ## CASE 2
 
-### Enter Sales & Rec. Setup:
+### Assisted Setup
 
--	Extended Data Start Balance Date: enter date
+-	Open Assisted Setup.
+-	Choose Set up advanced Adriatic Localization.
+-	Program opens wizard.
+-	Go to Next page.
+-	Choose localization country HR.
+-	Enable option Unpaid Receivables Enabled.
+-	Go to next page.
+-	Check or correct data about company.
+-	Go to next page.
+-	Enter Data Start Balance Date that will be used for overdue and unpaid receivables.
+-	Choose button Finish to confirm setup.
 
 ### Enter Journal with data: 
 
@@ -77,9 +98,19 @@ additional fields in ext. Table 21 so entries can't be printed.
 
 ## CASE 3
 
-### Enter Sales & Rec. Setup:
+### Assisted Setup
 
--	Extended Data Start Balance Date: enter date
+-	Open Assisted Setup.
+-	Choose Set up advanced Adriatic Localization.
+-	Program opens wizard.
+-	Go to Next page.
+-	Choose localization country HR.
+-	Enable option Unpaid Receivables Enabled.
+-	Go to next page.
+-	Check or correct data about company.
+-	Go to next page.
+-	Enter Data Start Balance Date that will be used for overdue and unpaid receivables.
+-	Choose button Finish to confirm setup.
 
 ### Enter Sales Invoice with data: 
 

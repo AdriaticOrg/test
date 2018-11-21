@@ -3,6 +3,25 @@
 
 ## CASE 1
 
+### Assisted Setup
+
+-	Open Assisted Setup.
+-	Choose Set up advanced Adriatic Localization.
+-	Program opens wizard.
+-	Go to Next page.
+-	Choose localization country SI.
+-	Enable option FAS enabled.
+-	Go to next page.
+-	Check or correct data about company.
+-	Go to next page.
+-	Choose FAS Report No. Series to create FAS reports.
+-	Choose FAS Responsible user ID that will be responsible for FAS reports when exporting XML file to authorities.
+-	Choose FAS Prepared by user ID that will prepare FAS reports when exporting XML file to authorities.
+-	Choose FAS Director by user ID that will prepare FAS reports when exporting XML file to authorities.
+-	Enter Budget User Code that will be exported to XML file.
+-	Enter Company Sector Code of company that will be exported to XML file.
+-	Choose button Finish to confirm setup.
+
 ### Enter FAS Finance Sectors
 
 -	Enter Code, Description.
@@ -27,13 +46,6 @@
 -	Choose appropriate FAS Sector Code for the customer/vendor. 
 
 ### Post Invoice
-
-### FAS Setup
-
--	Choose FAS Report No. Series 
--	Choose Prep. By User ID, Resp. User ID
--	Enter Budget User Code (or 00000)
--	Choose appropriate Company Sector Code.
 
 ### Adjust FAS on Entries
 

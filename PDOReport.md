@@ -3,6 +3,25 @@
 
 ## CASE 1
 
+### Assisted Setup
+
+To enable PDO Report functionality you need to set up fields in advanced Adriatic Localization that can be accessed through Assisted Setup.
+
+-	Open Assisted Setup.
+-	Choose Set up advanced Adriatic Localization.
+-	Program opens wizard.
+-	Go to Next page.
+-	Choose localization country SI.
+-	Enable option PDO enabled.
+-	Go to next page.
+-	Check or correct data about company.
+-	Go to next page.
+-	Choose PDO Report No. Series to create PDO reports.
+-	Choose PDO Prepared by user ID that will prepare PDO reports when exporting XML file to authorities.
+-	Choose PDO Responsible user ID that will be responsible for PDO reports when exporting XML file to authorities.
+-	Enter VAT Ident. Filter Code that will be used to filter VAT Entries in PDO Report. 
+-	Choose button Finish to confirm setup.
+
 ### Enter VAT Posting Setup
 
 -	Choose VAT Business Posting Group and VAT Product Posting Group.
@@ -20,12 +39,6 @@
 -	Choose VAT Product Posting Group and VAT Business Posting Group that was previously created.
 
 ### Post Invoice
-
-### PDO Setup
-
--	Choose PDO Report No. Series 
--	Choose Prep. By User ID, Resp. User ID
--	Enter PDO VAT Identifier Filter Code
 
 ### PDO Report
 

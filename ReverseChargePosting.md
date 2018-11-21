@@ -1,14 +1,19 @@
 # TEST SCENARIO: Reverse Charge Posting
 
-## CASE 1 
+## CASE 1: Same VAT output date as VAT date
 
-### Same VAT output date as VAT date
+### Assisted Setup:
 
-#### Enter VAT Setup:
+-	Open Assisted Setup.
+-	Choose Set up basic Adriatic Localization.
+-	Program opens wizard where you accept warning & privacy note for extension.
+-	Go to Next page.
+-	Set option Adriatic Localization Enabled on CORE SETUP section.
+-	Set option VAT enabled on VAT section.
+-	Disable option Use VAT Output Date on VAT section.
+-	Choose button Finish to confirm setup.
 
--	Use VAT Output Date: No
-
-#### VAT posting setup:
+### VAT posting setup:
 
 -	VAT Bus. Posting Group: Set VAT Bus. Posting Group (A)
 -	VAT Prod. Posting Group: Set VAT Prod. Posting Group (A)
@@ -18,7 +23,7 @@
 -	Purchase VAT Account: Set account (1) for posting
 -	Sale VAT Account: Set account(2) for posting
 
-#### G/L Account:
+### G/L Account:
 
 -	Gen. Prod. Posting Group
 -	VAT Prod. Posting Group (A)
@@ -45,13 +50,18 @@ VAT entry:
 
 -	One VAT entry where is VAT Calculation Type Reverse Charge
 
-## CASE 2 
+## CASE 2: Same VAT output date as VAT date
 
-Same VAT output date as VAT date
+### Assisted Setup:
 
-### Enter VAT Setup:
-
--	Use VAT Output Date: Yes
+-	Open Assisted Setup.
+-	Choose Set up basic Adriatic Localization.
+-	Program opens wizard where you accept warning & privacy note for extension.
+-	Go to Next page.
+-	Set option Adriatic Localization Enabled on CORE SETUP section.
+-	Set option VAT enabled on VAT section.
+-	Enable option Use VAT Output Date on VAT section.
+-	Choose button Finish to confirm setup.
 
 ### VAT posting setup:
 
