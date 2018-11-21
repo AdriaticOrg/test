@@ -20,7 +20,7 @@ This separate app has a purpose to test combination of:
 3. Open Application link from selected country (App) and use following passwords:
     > Username: admin<br>
     > Password: Rivo1706<br>
-> W1 password:<br>
+    W1 password:<br>
     > Username: admin<br>
     > Password: Lyxy1715<br>
 4. Accept the license and you are ready to start Business Central.
