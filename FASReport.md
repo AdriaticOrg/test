@@ -50,7 +50,7 @@
 -	User can manually enter/correct lines in FAS Report.
 -	User can export FAS entries with functionality Export lines based on filters in the header.
 
-### Error
+### Error:
 
 -	You may not enter numbers manually. If you want to enter numbers manually, please activate Manual Nos. in No. Series FAS.
 -	Period End Date must have a value in FAS Report Header. It cannot be zero or empty. 

@@ -19,7 +19,7 @@
 
 ### Print Posted Sales Invoice
 
-### ERROR:
+### Error:
 
 VAT Informative % is not printed on report.
 

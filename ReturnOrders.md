@@ -14,7 +14,7 @@
 -	Enter Item on lines.
 -	Goods Return Type: choose entered value
 
-### ERROR:
+### Error:
 
 VAT Business Group is not changed on Sales Header.
 
@@ -32,7 +32,7 @@ VAT Business Group is not changed on Sales Header.
 -	Enter Item on lines.
 -	Goods Return Type: choose entered value
 
-### ERROR:
+### Error:
 
 VAT Business Group is not changed on Purchase Header.
 

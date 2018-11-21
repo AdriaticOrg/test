@@ -29,7 +29,7 @@
 -	Choose VAT Review from VAT Books.
 -	Enter Date.
 
-### ERROR:
+### Error:
 
 Amounts are printed in column for VAT Amount instead of Base Amount.
 Amounts are printer for VAT Identifier that is not chosen for VAT Book Group.

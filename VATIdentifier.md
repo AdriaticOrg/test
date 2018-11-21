@@ -24,7 +24,7 @@
 
 ### Check VAT Entries for Posted Sales Invoice
 
-### ERROR:
+### Error:
 
 VAT Identifier is not entered on VAT Entry.
 
@@ -41,7 +41,7 @@ VAT Identifier is not entered on VAT Entry.
 
 ### Check VAT Entries for Posted Purchase Invoice
 
-### ERROR:
+### Error:
 
 VAT Identifier is not entered on VAT Entry.
 
@@ -58,6 +58,6 @@ VAT Identifier is not entered on VAT Entry.
 
 ### Check VAT Entries for Journal
 
-### ERROR:
+### Error:
 
 VAT Identifier is not entered on VAT Entry.

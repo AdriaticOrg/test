@@ -33,7 +33,7 @@
 -	User can manually enter/correct lines in BST Report.
 -	User can export BST entries with functionality Export lines based on filters in the header.
 
-### Error
+### Error:
 
 -	You may not enter numbers manually. If you want to enter numbers manually, please activate Manual Nos. in No. Series BST.
 -	Period End Date must have a value in BST Report Header. It cannot be zero or empty. 

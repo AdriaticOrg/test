@@ -24,7 +24,7 @@
 -	Choose Posted Sales Credit Memo
 -	Print Document.
 
-### ERROR:
+### Error:
 
 -	Place of issue is not printed on document.
 -	Date of issue is not printed on document.
@@ -40,7 +40,7 @@
 -	Choose Posted Sales Shipment
 -	Print Document.
 
-### ERROR:
+### Error:
 
 -	Place of issue is not printed on document.
 -	Date of issue is not printed on document.

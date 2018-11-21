@@ -37,7 +37,7 @@
 -	User can manually enter/correct lines in PDO Report.
 -	User can export PDO entries with functionality Export lines based on filters in the header.
 
-### Error
+### Error:
 
 -	You may not enter numbers manually. If you want to enter numbers manually, please activate Manual Nos. in No. Series VIES.
 -	Period End Date must have a value in PDO Report Header. It cannot be zero or empty. 

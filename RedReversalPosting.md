@@ -20,7 +20,7 @@
 
 ### Post document
 
-### ERROR:
+### Error:
 
 -	Open General Ledger Entries.
 -	All entries are posted on different side as posted purchase invoice.

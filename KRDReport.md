@@ -47,7 +47,7 @@
 -	User can manually enter/correct lines in KRD Report.
 -	User can export KRD entries with functionality Export lines based on filters in the header.
 
-### Error
+### Error:
 
 -	You may not enter numbers manually. If you want to enter numbers manually, please activate Manual Nos. in No. Series KRD.
 -	Period End Date must have a value in KRD Report Header. It cannot be zero or empty. 

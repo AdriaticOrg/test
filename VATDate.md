@@ -15,7 +15,7 @@ To enable VAT Date functionality set field "VAT Enabled" on table CoreSetup-Adl 
 
 ### Post Invoice
 
-### ERROR:
+### Error:
 
 VAT Date is not entered on Posted Sales Invoice Header.
 
@@ -31,6 +31,6 @@ VAT Date is not entered on Posted Sales Invoice Header.
 
 ### Post Invoice
 
-### ERROR:
+### Error:
 
 VAT Date is not entered on Posted Purchase Invoice Header.

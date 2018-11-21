@@ -9,7 +9,7 @@
 -	Enter Date Filter.
 -	Export to TXT file.
 
-### ERROR:
+### Error:
 
 TXT File is blank.
 TXT File has data that are outside chosen filter.
@@ -21,7 +21,7 @@ TXT File has data that are outside chosen filter.
 -	Enter Posting Date.
 -	Export to TXT file.
 
-### ERROR:
+### Error:
 
 TXT File is blank.
 TXT File has data that are outside chosen filter.
