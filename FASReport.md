@@ -1,7 +1,6 @@
 # TEST SCENARIO: FAS Report
 
-
-## CASE 1
+## CASE: Prepare FAS Report
 
 ### Assisted Setup
 
@@ -45,7 +44,11 @@
 
 -	Choose appropriate FAS Sector Code for the customer/vendor. 
 
-### Post Invoice
+### Post Sales/Purchase Invoice
+
+-	Create Sales/Purchase Invoice with all mandatory fields for posting.
+-	Choose G/L Account that has FAS Instrument Code entered on G/L Account Card.
+-	Post Invoice.
 
 ### Adjust FAS on Entries
 

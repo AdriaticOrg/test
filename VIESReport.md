@@ -28,7 +28,7 @@
 -	Field VAT Calculation Type should be Normal VAT.
 -	Enter Sales VAT Account.
 
-### Open Sales Invoice
+### Post Sales Invoice
 
 -	Choose Customer No.
 -	Enter VAT Date
@@ -37,8 +37,7 @@
 -	Choose VAT Product Posting Group and VAT Business Posting Group that was previously created.
 -	Invoice Details: set a check mark in EU 3-Party Trade if transactions from the document need to be reported in VIES as 3-Party Trade.  
 -	Invoice Details: set a check mark in EU Customers Procedure, if transactions from document need to be reported in VIES as transactions from special customs procedures.
-
-### Post Invoice
+-	Post Invoice
 
 ### VIES Report
 

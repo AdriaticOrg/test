@@ -1,8 +1,8 @@
 # TEST SCENARIO: Detail Trial Balance Extended
 
-## CASE 1
+## CASE 1: Detail Trial Balance Extended Print
 
-### Enter General Ledger Setup:
+### General Ledger Setup:
 
 -	Enter Global Posting Approver
 -	Enter Global Posting Responsible Person

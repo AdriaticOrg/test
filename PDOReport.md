@@ -1,7 +1,7 @@
 # TEST SCENARIO: PDO Report
 
 
-## CASE 1
+## CASE: Prepare KRT Report
 
 ### Assisted Setup
 
@@ -30,15 +30,14 @@ To enable PDO Report functionality you need to set up fields in advanced Adriati
 -	Field VAT % should be 0.
 -	Enter Sales VAT Account, VAT Identifier.
 
-### Open Sales Invoice
+### Post Sales Invoice
 
 -	Choose Customer No.
 -	Enter VAT Date
 -	Enter VAT Correction Date on sales documents, which means, for which VAT date transactions, which are corrected with this document, were previously reported (period for correction is calculated from this date). 
 -	Enter Item on lines.
 -	Choose VAT Product Posting Group and VAT Business Posting Group that was previously created.
-
-### Post Invoice
+-	Post Invoice.
 
 ### PDO Report
 

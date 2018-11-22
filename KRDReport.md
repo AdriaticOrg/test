@@ -1,7 +1,7 @@
 # TEST SCENARIO: KRD Report
 
 
-## CASE 1
+## CASE: Prepare KRD Report
 
 ### Assisted Setup
 
@@ -43,7 +43,10 @@
 -	Choose appropriate KRD Non-Resident Sector Code for the customer/vendor. 
 -	Choose appropriate KRD Affiliation Type for the customer/vendor.
 
-### Post Invoice
+### Post Sales/Purchase Invoice
+
+-	Create Sales/Purchase Invoice with all mandatory fields for posting.
+-	Post Invoice.
 
 ### Adjust KRD on Entries
 

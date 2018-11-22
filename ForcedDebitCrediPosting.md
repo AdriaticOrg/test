@@ -1,6 +1,6 @@
 # TEST SCENARIO: Forced Debit/Credit Posting
 
-## CASE 1
+## CASE 1: Post as Credit Amount
 
 ### Assisted Setup
 
@@ -16,7 +16,7 @@
 
 -	Debit/Credit: choose Debit
 
-### Enter Journal with data: 
+### Post Journal with data: 
 
 -	Posting Date
 -	Account Type: G/L Account
@@ -25,20 +25,19 @@
 -	Credit Amount
 -	Balance Account Type: G/L Account
 -	Balance Account No.: G/L Account No.
-
-### Post Journal
+-	Post Journal
 
 ### Error: 
 
 -	General Ledger Entry is posted to Credit Amount.
 
-## CASE 2
+## CASE 2: Post as Debit Amount
 
 ### G/L Account Card:
 
 -	Debit/Credit: choose Credit
 
-### Enter Journal with data: 
+### Post Journal with data: 
 
 -	Posting Date
 -	Account Type: G/L Account
@@ -47,20 +46,19 @@
 -	Debit Amount
 -	Balance Account Type: G/L Account
 -	Balance Account No.: G/L Account No.
-
-### Post Journal
+-	Post Journal
 
 ### Error: 
 
 -	General Ledger Entry is posted to Debit Amount.
 
-## CASE 3
+## CASE 3: Post as Debit or Credit Amount
 
 ### G/L Account Card:
 
 -	Debit/Credit: choose Both
 
-### Enter Journal with data: 
+### Post Journal with data: 
 
 -	Posting Date
 -	Account Type: G/L Account
@@ -69,8 +67,7 @@
 -	Credit Amount
 -	Balance Account Type: G/L Account
 -	Balance Account No.: G/L Account No.
-
-### Post Journal
+-	Post Journal
 
 ### Error: 
 

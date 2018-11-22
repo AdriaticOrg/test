@@ -1,8 +1,6 @@
 # TEST SCENARIO: Postponed VAT
 
-## CASE 1 
-
-### VAT date is different than posting date and output VAT date
+## CASE 1: VAT date is different than posting date and output VAT date
 
 ### Assisted Setup:
 
@@ -32,32 +30,26 @@
 -	Gen. Prod. Posting Group
 -	VAT Prod. Posting Group (A)
 
-### Create Purchase Document with data:
+### Post Purchase Document with data:
 
-#### Header
+-	Header:<br>
+        Vendor Name: Select vendor from list<br>
+        Posting date: Choose posting date. VAT output date is same.<br>
+        VAT date: VAT date is different then posting date.<br>
+        Postponed VAT: Value is set at Postponed VAT by changing VAT date.<br>
+        Vendor Invoice No.: Enter external document No.<br>
+-	Line<br>
+        Type: G/L Account<br>
+        No.: G/L Account No.<br>
+        Quantity<br>
+        Direct unit cost excl. VAT<br>
+-	Post Document<br>
 
--	Vendor Name: Select vendor from list
--	Posting date: Choose posting date. VAT output date is same.
--	VAT date: VAT date is different then posting date.
--	Postponed VAT: Value is set at Postponed VAT by changing VAT date.
--	Vendor Invoice No.: Enter external document No.
-
-#### Line
-
--	Type: G/L Account
--	No.: G/L Account No.
--	Quantity
--	Direct unit cost excl. VAT
-
-### Post Document
-
-VAT entry:
+###VAT entry:
 
 -	Two VAT entries where is VAT Calculation Type Reverse Charge. First is posted at posting date on document and Postponed VAT is set at Postponed. Second is posted at VAT date and Postponed VAT is set at Realized VAT.
 
-## CASE 2 
-
-VAT date is different than posting date and output VAT date is different than VAT date and posting date.
+## CASE 2: VAT date is different than posting date and output VAT date is different than VAT date and posting date.
 
 ### Assisted Setup:
 
@@ -87,26 +79,22 @@ VAT date is different than posting date and output VAT date is different than VA
 -	Gen. Prod. Posting Group
 -	VAT Prod. Posting Group (A)
 
-### Create Purchase Document with data:
+### Post Purchase Document with data:
 
-#### Header
+-	Header:<br>
+        Vendor Name: Select vendor from list<br>
+        Posting date: Choose posting date.<br>
+        VAT date: VAT date is different then posting date.<br>
+        VAT output date: Output VAT date is different then VAT date and posting date.<br>
+        Postponed VAT: Value is set at Postponed VAT by changing VAT date.<br>
+        Vendor Invoice No.: Enter external document No.<br>
+-	Line:<br>
+        Type: G/L Account<br>
+        No.: G/L Account No.<br>
+        Quantity<br>
+        Direct unit cost excl. VAT<br>
+-	Post Document<br>
 
--	Vendor Name: Select vendor from list
--	Posting date: Choose posting date. 
--	VAT date: VAT date is different then posting date.
--	VAT output date: Output VAT date is different then VAT date and posting date
--	Postponed VAT: Value is set at Postponed VAT by changing VAT date.
--	Vendor Invoice No.: Enter external document No.
-
-#### Line
-
--	Type: G/L Account
--	No.: G/L Account No.
--	Quantity
--	Direct unit cost excl. VAT
-
-### Post Document
-
-VAT entry:
+###VAT entry:
 
 Four VAT entries, where is VAT Calculation Type Reverse Charge. First is posted at posting date on document and Postponed VAT is set at Postponed, and type is Sale. Second is posted at VAT output date and Postponed VAT is set at Realized VAT, and type is Sale. Third entry is posted at posting date on document and Postponed VAT is set at Postponed, and type is Purchase. Fourth entry is posted at VAT date and Postponed VAT is set at Realized VAT, and type is Purchase.

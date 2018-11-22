@@ -1,6 +1,6 @@
 # TEST SCENARIO: VAT Books
 
-## CASE
+## CASE: Print VAT Books
 
 ### Enter VAT Book
 

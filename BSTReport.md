@@ -1,7 +1,7 @@
 # TEST SCENARIO: BST Report
 
 
-## CASE 1
+## CASE 1: Prepare BST Report
 
 ### Assisted Setup
 
@@ -29,11 +29,15 @@
 -	Choose appropriate BST Value Posting.
 -	Choose appropriate BST Code.
 
-### Post Invoice
+### Post Sales/Purchase Invoice
+
+-	Create Sales/Purchase Invoice with all mandatory fields for posting.
+-	Choose G/L Account that has BST code entered on G/L Account Card.
+-	Post Invoice.
 
 ### Adjust BST on Entries
 
--	User adjust G/L entries with functionality Adjust BST on Entries based on filters in the header.
+-	User adjusts G/L entries with functionality Adjust BST on Entries based on filters in the header when functionality is enabled.
 
 ### BST Report
 

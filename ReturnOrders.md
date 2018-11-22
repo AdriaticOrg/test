@@ -1,6 +1,6 @@
 # TEST SCENARIO: Return Orders
 
-## CASE 1
+## CASE 1: Changing VAT Business Group on Sales document
 
 ### Enter Goods Return Types
 
@@ -8,7 +8,7 @@
 -	Description: enter description
 -	VAT Business Posting Group: choose default code
 
-### Open Sales Return Order
+### Create Sales Return Order
 
 -	Choose Customer No.
 -	Enter Item on lines.
@@ -18,7 +18,7 @@
 
 VAT Business Group is not changed on Sales Header.
 
-## CASE 2
+## CASE 2: Changing VAT Business Group on Purchase document
 
 ### Enter Goods Return Types
 
@@ -26,7 +26,7 @@ VAT Business Group is not changed on Sales Header.
 -	Description: enter description
 -	VAT Business Posting Group: choose default code
 
-### Open Purchase Return Order
+### Create Purchase Return Order
 
 -	Choose Vendor No.
 -	Enter Item on lines.

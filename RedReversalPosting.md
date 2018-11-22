@@ -1,6 +1,6 @@
 # TEST SCENARIO: Red Reversal Posting
 
-## CASE 1 
+## CASE: Posting of red reversal when posting as red storno of purchase document
 
 ### Open General Ledger Setup:
 
@@ -8,17 +8,16 @@
 
 ### Post Purchase Order
 
--	Choose Vendor No.
--	Choose Item on the line.
+-	Choose Vendor No. and all mandatory fields on header
+-	Choose Item and enter Quantity and Direct unit cost on the line.
 -	Post Purchase Order.
 
-### Create Purchase Return Order:
+### Post Purchase Return Order:
 
 -	Copy Posted Purchase Invoice from first step. All of data are copied.
 -	Correction: set value on Yes.
 -	Vendor Cr. Memo No.: Enter Correction 01
-
-### Post document
+-	Post document.
 
 ### Error:
 

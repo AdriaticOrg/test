@@ -2,7 +2,7 @@
 
 To enable VAT Date functionality set field "VAT Enabled" on table CoreSetup-Adl that can be accessed through Assisted Setup on "Set up basic Adriatic Localization".
 
-## CASE 1
+## CASE 1: VAT Date on Posted Sales Invoice
 
 ### Assisted Setup
 
@@ -21,14 +21,13 @@ To enable VAT Date functionality set field "VAT Enabled" on table CoreSetup-Adl 
 -	Enter VAT Date on Sales Invoice Header.
 -	Enter Item on Sales Invoice Lines.
 -	Enter Quantity and Unit Price on Sales Invoice Lines.
-
-### Post Invoice
+-	Post Invoice
 
 ### Error:
 
 VAT Date is not entered on Posted Sales Invoice Header.
 
-## CASE 2
+## CASE 2:  VAT Date on Posted Purchase Invoice
 
 ### Assisted Setup
 
@@ -47,8 +46,7 @@ VAT Date is not entered on Posted Sales Invoice Header.
 -	Enter VAT Date on Purchase Invoice Header.
 -	Enter Item on Purchase Invoice Lines.
 -	Enter Quantity and Unit Price on Sales Invoice Lines.
-
-### Post Invoice
+-	Post Invoice
 
 ### Error:
 

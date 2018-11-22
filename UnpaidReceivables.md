@@ -17,7 +17,7 @@
 -	Enter Data Start Balance Date that will be used for overdue and unpaid receivables.
 -	Choose button Finish to confirm setup.
 
-### Enter Journal with data: 
+### Post Journal with data: 
 
 -	Posting Date: before Extended Data Start Balance Date entered in Sales & Rec. Setup
 -	Account Type: Customer
@@ -30,8 +30,7 @@
 -	Open Amount (LCY) Without Unrealized Exch. Rate Adj
 -	Original Document Amount (LCY)
 -	Original Amount (LCY)
-
-### Post Journal
+-	Post Journal
 
 ### Check Customer Ledger Entry if fields are filled:
 
@@ -65,7 +64,7 @@ additional fields in ext. Table 21 so entries can't be printed.
 -	Enter Data Start Balance Date that will be used for overdue and unpaid receivables.
 -	Choose button Finish to confirm setup.
 
-### Enter Journal with data: 
+### Post Journal with data: 
 
 -	Posting Date: after Extended Data Start Balance Date entered in Sales & Rec. Setup
 -	Account Type: Customer
@@ -78,8 +77,7 @@ additional fields in ext. Table 21 so entries can't be printed.
 -	Open Amount (LCY) Without Unrealized Exch. Rate Adj
 -	Original Document Amount (LCY)
 -	Original Amount (LCY)
-
-### Post Journal
+-	Post Journal
 
 ### Check Customer Ledger Entry if fields are filled:
 
@@ -112,14 +110,13 @@ additional fields in ext. Table 21 so entries can't be printed.
 -	Enter Data Start Balance Date that will be used for overdue and unpaid receivables.
 -	Choose button Finish to confirm setup.
 
-### Enter Sales Invoice with data: 
+### Post Sales Invoice with data: 
 
 -	Posting Date: after Extended Data Start Balance Date entered in Sales & Rec. Setup
 -	Customer No.
 -	Due Date: after Posting Date
 -	Enter line for Item, Qty and Unit Price Excl. VAT
-
-### Post Invoice
+-	Post Invoice
 
 ### Run report: Overdue and Uncoll.Rec-adl (13062741)
 

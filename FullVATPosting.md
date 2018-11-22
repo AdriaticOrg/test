@@ -1,6 +1,6 @@
 # TEST SCENARIO: Full VAT Posting
 
-## CASE
+## CASE: Post Full VAT on Purchase Invoice
 
 ### Create VAT posting setup:
 
@@ -16,22 +16,18 @@
 -	Choose Gen. Prod. Posting Group
 -	Choose VAT Prod. Posting Group (A)
 
-### Create Purchase Document with following data:
+### Post Purchase Document with following data:
 
-#### Header
-
--	Vendor Name: Select vendor from list
--	Posting date: Choose posting date. 
--	Vendor Invoice No.: Enter External Document No.
-
-#### Line
-
--	Choose Type: G/L Account
--	Enter No. G/L Account No.
--	Enter Quantity.
--	Enter Direct unit cost excl. VAT
-
-### Post Document
+-	Header:<br>
+        Vendor Name: Select vendor from list<br>
+        Posting date: Choose posting date. <br>
+        Vendor Invoice No.: Enter External Document No.<br>
+-	Line:<br>
+        Choose Type: G/L Account<br>
+        Enter No. G/L Account No.<br>
+        Enter Quantity.<br>
+        Enter Direct unit cost excl. VAT<br>
+-	Post Document<br>
 
 ### Check VAT entry:
 

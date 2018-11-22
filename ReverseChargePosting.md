@@ -28,25 +28,21 @@
 -	Gen. Prod. Posting Group
 -	VAT Prod. Posting Group (A)
 
-### Create Purchase Document with following data:
+### Post Purchase Document with following data:
 
-#### Header
+-	Header:<br>
+        Vendor Name: Select vendor from list<br>
+        Posting date: Choose posting date. VAT date and VAT output date are same.<br>
+        Postponed VAT: Value is set at Realized VAT by default.<br>
+        Vendor Invoice No.: Enter external document No.<br>
+-	Line<br>
+        Type: G/L Account<br>
+        No. G/L Account No.<br>
+        Quantity<br>
+        Direct unit cost excl. VAT<br>
+-	Post Document<br>
 
--	Vendor Name: Select vendor from list
--	Posting date: Choose posting date. VAT date and VAT outpute date are same.
--	Postponed VAT: Value is set at Realized VAT by default.
--	Vendor Invoice No.: Enter external document No.
-
-#### Line
-
--	Type: G/L Account
--	No. G/L Account No.
--	Quantity
--	Direct unit cost excl. VAT
-
-### Post Document
-
-VAT entry:
+### VAT entry:
 
 -	One VAT entry where is VAT Calculation Type Reverse Charge
 
@@ -78,24 +74,20 @@ VAT entry:
 -	Gen. Prod. Posting Group
 -	VAT Prod. Posting Group (A)
 
-### Create Purchase Document with following data:
+### Post Purchase Document with following data:
 
-#### Header
+-	Header:<br>
+        Vendor Name: Select vendor from list<br>
+        Posting date: Choose posting date. VAT date and VAT outpute date are same.<br>
+        Postponed VAT: Value is set at Realized VAT by default.<br>
+        Vendor Invoice No.: Enter external document No.<br>
+-	Line:<br>
+        Type: G/L Account<br>
+        No. G/L Account No.<br>
+        Quantity<br>
+        Direct unit cost excl. VAT<br>
+-	Post Document<br>
 
--	Vendor Name: Select vendor from list
--	Posting date: Choose posting date. VAT date and VAT outpute date are same.
--	Postponed VAT: Value is set at Realized VAT by default.
--	Vendor Invoice No.: Enter external document No.
-
-#### Line
-
--	Type: G/L Account
--	No. G/L Account No.
--	Quantity
--	Direct unit cost excl. VAT
-
-### Post Document
-
-VAT entry:
+### VAT entry:
 
 -	Two VAT entry. Vat calculation type i Normal at both entries. At first Type is Sale, and at second Type is Purchase.
