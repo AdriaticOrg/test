@@ -53,7 +53,7 @@
 -	User export VIES entries with functionality Export lines based on filters in the header.
 -	User can Export VIES Report in format based on VIES Country. 
 
-### Error
+### Error:
 
 -	You may not enter numbers manually. If you want to enter numbers manualy, please activate Manual Nos. in No. Series VIES.
 -	VIES Country must not be enter in VIES Report.
