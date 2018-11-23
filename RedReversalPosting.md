@@ -1,48 +1,54 @@
 # TEST SCENARIO: Red Reversal Posting
 
-## CASE 1: Posting of red reversal when posting purchase document as correction
+## CASE 1: Posting of red reversal while undo purchase receipt 
 
 ### Open General Ledger Setup:
 
 -	Show Amounts: choose option All Amounts
 
-### Post Purchase Order
+### Open Inventory Setup
 
--	Choose Vendor No. and all mandatory fields on header
+-	Post Neg. Transfers as Corr.
+-	Set field Expected Cost posting to G/L.
+
+### Post Purchase Receipt
+
+-	Choose Vendor No. and all mandatory fields on header.
 -	Choose Item and enter Quantity and Direct unit cost on the line.
--	Post Purchase Order.
+-	Post Receipt.
 
-### Post Purchase Return Order:
+### Undo Posted Purchase Receipt
 
--	Copy Posted Purchase Invoice from first step. All of data are copied.
--	Correction: set value on Yes.
--	Vendor Cr. Memo No.: Enter Correction 01
--	Post document.
+-	Open previously posted purchase receipt.
+-	Choose option Undo Receipt.
+-	Open Posted Purchase Receipt.
+-	Check General Ledger Entries.
 
 ### Error:
 
--	Open General Ledger Entries.
--	All entries are posted on different side as posted purchase invoice.
+-	Open Value Entries. Entries are not set as correction.
+-	Open General Ledger Entries. All entries are posted as positive amount in debit or credit amount.
 
-## CASE 2: Posting of red reversal when posting sales document as correction
+## CASE 2: Posting of red reversal while undo sales shipment
 
 ### Open General Ledger Setup:
 
 -	Show Amounts: choose option All Amounts
 
-### Post Sales Order
+### Post Sales Shipment
 
--	Choose Customer No. and all mandatory fields on header
+-	Choose Customer No. and all mandatory fields on header.
 -	Choose Item and enter Quantity and Unit Price on the line.
--	Post Sales Order.
+-	Post Sales Shipment.
 
-### Post Sales Return Order:
+### Undo Posted Sales Shipment
 
--	Copy Posted Sales Invoice from first step. All of data are copied.
--	Correction: set value on Yes.
--	Post document.
+-	Open previously posted sales shipment.
+-	Choose option Undo Shipment.
+-	Open Posted Sales Shipment.
+-	Check General Ledger Entries.
 
 ### Error:
 
--	Open General Ledger Entries.
--	All entries are posted on different side as posted sales invoice.
+-	Open Value Entries. Entries are not set as correction.
+-	Open General Ledger Entries. All entries are posted as positive amount in debit or credit amount.
