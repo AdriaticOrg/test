@@ -9,13 +9,41 @@
 -	Field VAT % should be 0.
 -	Enter Sales VAT Account.
 
+VAT Bus. Posting Group|VAT Prod. Posting Group|VAT Calculation Type|VAT Identifier|VAT %|VAT % (Informative)
+----------------------|-----------------------|--------------------|--------------|-----|-------------------
+K-DA|ODB-22|Normal VAT|36|0|22
+K-DA|ODB-9,5|Normal VAT|35|0|9,5
+
 ### Post Sales Invoice
 
 -	Choose Customer No.
 -	Enter Item on lines.
 -	Choose VAT Product Posting Group and VAT Business Posting Group that was previously created.
--	Post Invoice.
--	Print Posted Sales Invoice.
+
+VAT Bus. Posting Group|VAT Prod. Posting Group|Unit Price Excl. VAT
+----------------------|-----------------------|--------------------
+K-DA|ODB-22|1.000,00
+
+-	Post Invoice. 
+-	Check posted General Ledger Entries.
+
+G/L Account No.|Amount
+---------------|------
+760010|-1.000,00
+120010| 1.000,00
+
+-	Check VAT Entries.
+
+VAT Bus. Posting Group|VAT Prod. Posting Group|Type|Base|Amount
+----------------------|-----------------------|----|----|------
+K-DA|ODB-22|Sale|1.000,00|0,00
+
+-	Print Posted Sales Invoice. Check VAT Specification about informative VAT that should be on printout.
+
+VAT %|VAT Amount Exl. VAT|VAT Amount|Amount Incl. VAT|VAT % Informative|VAT Amount (Informative)
+-:|-:|-:|-:|-:|-:
+0|1.000|0,00|1.000,00|22|220,00
+
 
 ### Error:
 
