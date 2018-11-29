@@ -16,7 +16,7 @@ K-DA|ODB-9,5|Normal VAT|35|0|9,5|260910
 
 ### 2. Post Sales Invoice
 
--	Choose Customer No.
+-	Choose domestic Customer No.
 -	Enter Item on lines.
 -	Choose VAT Product Posting Group and VAT Business Posting Group that was previously created.
 
