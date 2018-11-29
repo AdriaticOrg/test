@@ -28,6 +28,7 @@ K-DA|ODB-22|1.000,00
 -	Check posted General Ledger Entries.
 
 G/L Account No.|Amount
+---------------|------
 760010|-1.000,00
 120010| 1.000,00
 
