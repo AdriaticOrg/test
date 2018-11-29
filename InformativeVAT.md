@@ -25,6 +25,9 @@ VAT Bus. Posting Group|VAT Prod. Posting Group|Unit Price Excl. VAT
 K-DA|ODB-22|1.000,00
 
 -	Post Invoice. 
+
+### 3. Check posted entries
+
 -	Check posted General Ledger Entries.
 
 G/L Account No.|Amount
@@ -38,13 +41,15 @@ VAT Bus. Posting Group|VAT Prod. Posting Group|Type|Base|Amount
 ----------------------|-----------------------|----|----|------
 K-DA|ODB-22|Sale|1.000,00|0,00
 
--	Print Posted Sales Invoice. Check VAT Specification about informative VAT that should be on printout.
+###	4. Print Posted Sales Invoice. 
+
+Check VAT Specification about informative VAT that should be on printout.
 
 VAT %|VAT Amount Exl. VAT|VAT Amount|Amount Incl. VAT|VAT % Informative|VAT Amount (Informative)
 -:|-:|-:|-:|-:|-:
 0|1.000|0,00|1.000,00|22|220,00
 
-### 3. Test case acceptance criteria
+## Test case acceptance criteria
 
 -	VAT % (informative) is transferred to Sales Invoice Line and Sales Credit Memo Line.
 -	Informative VAT amount and Informative VAT % is printed on Sales Invoice and Sales Credit Memo.
