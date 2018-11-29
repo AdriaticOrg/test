@@ -6,20 +6,20 @@
 
 -	Enter Code and Description for VAT Identifier.
 
-Code|Description
-----|-----------
-12|D-DA + B-22 - ODB (8,18)
-14|K-DA + B-22 - OBR (7,14)
+    Code|Description
+    ----|-----------
+    12|D-DA + B-22 - ODB (8,18)
+    14|K-DA + B-22 - OBR (7,14)
 
 ### Enter VAT Posting Setup
 
 -	Choose VAT Business Posting Group and VAT Product Posting Group.
 -	Enter VAT Identifier for combination. 
 
-VAT Bus. Posting Group|VAT Prod. Posting Group|VAT Identifier
-----------------------|-----------------------|--------------
-D-DA|B-22|12
-K-DA|B-22|14
+    VAT Bus. Posting Group|VAT Prod. Posting Group|VAT Identifier
+    ----------------------|-----------------------|--------------
+    D-DA|B-22|12
+    K-DA|B-22|14
 
 ## CASE 1: VAT Identifier on VAT Entries for Sales Invoice
 
@@ -30,16 +30,16 @@ K-DA|B-22|14
 -	Enter Item, Quantity and Unit Price on lines.
 -	Choose VAT Product Posting Group and VAT Business Posting Group that was previously created.
 
-VAT Bus. Posting Group|VAT Prod. Posting Group
-----------------------|-----------------------
-K-DA|B-22
+    VAT Bus. Posting Group|VAT Prod. Posting Group
+    ----------------------|-----------------------
+    K-DA|B-22
 
 -	Post Invoice
 -	Check VAT Entries for Posted Sales Invoice
 
-VAT Bus. Posting Group|VAT Prod. Posting Group|VAT Identifier
-----------------------|-----------------------|--------------
-K-DA|B-22|14
+    VAT Bus. Posting Group|VAT Prod. Posting Group|VAT Identifier
+    ----------------------|-----------------------|--------------
+    K-DA|B-22|14
 
 ## Test case acceptance criteria
 
@@ -54,16 +54,16 @@ K-DA|B-22|14
 -	Enter Item, Quantity and Unit Price on lines.
 -	Choose VAT Product Posting Group and VAT Business Posting Group that was previously created.
 
-VAT Bus. Posting Group|VAT Prod. Posting Group
-----------------------|-----------------------
-K-DA|B-22
+    VAT Bus. Posting Group|VAT Prod. Posting Group
+    ----------------------|-----------------------
+    K-DA|B-22
 
 -	Post Invoice
 -	Check VAT Entries for Posted Sales Invoice
 
-VAT Bus. Posting Group|VAT Prod. Posting Group|VAT Identifier
-----------------------|-----------------------|--------------
-K-DA|B-22|14
+    VAT Bus. Posting Group|VAT Prod. Posting Group|VAT Identifier
+    ----------------------|-----------------------|--------------
+    K-DA|B-22|14
 
 ## Test case acceptance criteria
 
@@ -78,16 +78,16 @@ K-DA|B-22|14
 -	Enter Item, Quantity and Direct Unit Cost on lines.
 -	Choose VAT Product Posting Group and VAT Business Posting Group that was previously created.
 
-VAT Bus. Posting Group|VAT Prod. Posting Group
-----------------------|-----------------------
-D-DA|B-22
+    VAT Bus. Posting Group|VAT Prod. Posting Group
+    ----------------------|-----------------------
+    D-DA|B-22
 
 -	Post Invoice
 -	Check VAT Entries for Posted Purchase Invoice
 
-VAT Bus. Posting Group|VAT Prod. Posting Group|VAT Identifier|Type
-----------------------|-----------------------|--------------|----
-D-DA|B-22|12|Purchase
+    VAT Bus. Posting Group|VAT Prod. Posting Group|VAT Identifier|Type
+    ----------------------|-----------------------|--------------|----
+    D-DA|B-22|12|Purchase
 
 ## Test case acceptance criteria
 
@@ -102,16 +102,16 @@ D-DA|B-22|12|Purchase
 -	Enter Item, Quantity and Direct Unit Cost on lines.
 -	Choose VAT Product Posting Group and VAT Business Posting Group that was previously created.
 
-VAT Bus. Posting Group|VAT Prod. Posting Group
-----------------------|-----------------------
-D-DA|B-22
+    VAT Bus. Posting Group|VAT Prod. Posting Group
+    ----------------------|-----------------------
+    D-DA|B-22
 
 -	Post Invoice
 -	Check VAT Entries for Posted Purchase Credit Memo
 
-VAT Bus. Posting Group|VAT Prod. Posting Group|VAT Identifier|Type
-----------------------|-----------------------|--------------|----
-D-DA|B-22|12|Purchase
+    VAT Bus. Posting Group|VAT Prod. Posting Group|VAT Identifier|Type
+    ----------------------|-----------------------|--------------|----
+    D-DA|B-22|12|Purchase
 
 ## Test case acceptance criteria
 
@@ -126,16 +126,16 @@ D-DA|B-22|12|Purchase
 -	Choose General Posting Type, General Product Posting Group and General Business Posting Group.
 -	Choose VAT Product Posting Group and VAT Business Posting Group that was previously created.
 
-Account Type|Account No.|Gen. Posting Type|General Bus. Posting Group|General Prod. Posting Group|VAT Bus. Posting Group|VAT Prod. Posting Group|Amount|Bal. Account Type|Bal. Account No.
-------------|-----------|-----------------|--------------------------|---------------------------|----------------------|-----------------------|------|-----------------|----------------
-G/L Account|760010|Sale|D-DA|B-SPL|D-DA|B-22|100,00|Customer|Customer No.
+    Account Type|Account No.|Gen. Posting Type|General Bus. Posting Group|General Prod. Posting Group|VAT Bus. Posting Group|VAT Prod. Posting Group|Amount|Bal. Account Type|Bal. Account No.
+    ------------|-----------|-----------------|--------------------------|---------------------------|----------------------|-----------------------|------|-----------------|----------------
+    G/L Account|760010|Sale|D-DA|B-SPL|D-DA|B-22|100,00|Customer|Customer No.
 
 -	Post Journal
 -	Check VAT Entries for Journal
 
-VAT Bus. Posting Group|VAT Prod. Posting Group|VAT Identifier|Type
-----------------------|-----------------------|--------------|----
-K-DA|B-22|14|Sale
+    VAT Bus. Posting Group|VAT Prod. Posting Group|VAT Identifier|Type
+    ----------------------|-----------------------|--------------|----
+    K-DA|B-22|14|Sale
 
 ## Test case acceptance criteria
 
@@ -150,16 +150,16 @@ K-DA|B-22|14|Sale
 -	Choose General Posting Type, General Product Posting Group and General Business Posting Group.
 -	Choose VAT Product Posting Group and VAT Business Posting Group that was previously created.
 
-Account Type|Account No.|Gen. Posting Type|General Bus. Posting Group|General Prod. Posting Group|VAT Bus. Posting Group|VAT Prod. Posting Group|Amount|Bal. Account Type|Bal. Account No.
-------------|-----------|-----------------|--------------------------|---------------------------|----------------------|-----------------------|------|-----------------|----------------
-G/L Account|415010|Purchase|D-DA|B-SPL|D-DA|B-22|100,00|Vendor|Vendor No.
+    Account Type|Account No.|Gen. Posting Type|General Bus. Posting Group|General Prod. Posting Group|VAT Bus. Posting Group|VAT Prod. Posting Group|Amount|Bal. Account Type|Bal. Account No.
+    ------------|-----------|-----------------|--------------------------|---------------------------|----------------------|-----------------------|------|-----------------|----------------
+    G/L Account|415010|Purchase|D-DA|B-SPL|D-DA|B-22|100,00|Vendor|Vendor No.
 
 -	Post Journal
 -	Check VAT Entries for Journal
 
-VAT Bus. Posting Group|VAT Prod. Posting Group|VAT Identifier|Type
-----------------------|-----------------------|--------------|----
-D-DA|B-22|12|Purchase
+    VAT Bus. Posting Group|VAT Prod. Posting Group|VAT Identifier|Type
+    ----------------------|-----------------------|--------------|----
+    D-DA|B-22|12|Purchase
 
 ## Test case acceptance criteria
 
