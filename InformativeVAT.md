@@ -1,8 +1,8 @@
 # TEST SCENARIO: Informative VAT
 
-## CASE 1: Print VAT Informative VAT on VAT Specification
+## CASE: Print VAT Informative VAT on VAT Specification
 
-### Enter VAT Posting Setup
+### 1. Enter VAT Posting Setup
 
 -	Choose VAT Business Posting Group and VAT Product Posting Group.
 -	Enter VAT % (Informative) for combination.
@@ -14,7 +14,7 @@ VAT Bus. Posting Group|VAT Prod. Posting Group|VAT Calculation Type|VAT Identifi
 K-DA|ODB-22|Normal VAT|36|0|22|260910
 K-DA|ODB-9,5|Normal VAT|35|0|9,5|260910
 
-### Post Sales Invoice
+### 2. Post Sales Invoice
 
 -	Choose Customer No.
 -	Enter Item on lines.
@@ -44,7 +44,7 @@ VAT %|VAT Amount Exl. VAT|VAT Amount|Amount Incl. VAT|VAT % Informative|VAT Amou
 -:|-:|-:|-:|-:|-:
 0|1.000|0,00|1.000,00|22|220,00
 
-### Test case acceptance criteria
+### 3. Test case acceptance criteria
 
 -	VAT % (informative) is transferred to Sales Invoice Line and Sales Credit Memo Line.
 -	Informative VAT amount and Informative VAT % is printed on Sales Invoice and Sales Credit Memo.
