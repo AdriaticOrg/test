@@ -46,9 +46,5 @@ VAT %|VAT Amount Exl. VAT|VAT Amount|Amount Incl. VAT|VAT % Informative|VAT Amou
 
 ### Test case acceptance criteria
 
+-	VAT % (informative) is transferred to Sales Invoice Line and Sales Credit Memo Line.
 -	Informative VAT amount and Informative VAT % is printed on Sales Invoice and Sales Credit Memo.
-
-### Error:
-
-VAT Informative % is not printed on report.
-
