@@ -9,10 +9,10 @@
 -	Field VAT % should be 0.
 -	Enter Sales VAT Account.
 
-VAT Bus. Posting Group|VAT Prod. Posting Group|VAT Calculation Type|VAT Identifier|VAT %|VAT % (Informative)
-----------------------|-----------------------|--------------------|--------------|-----|-------------------
-K-DA|ODB-22|Normal VAT|36|0|22
-K-DA|ODB-9,5|Normal VAT|35|0|9,5
+VAT Bus. Posting Group|VAT Prod. Posting Group|VAT Calculation Type|VAT Identifier|VAT %|VAT % (Informative)|Sales VAT Account
+----------------------|-----------------------|--------------------|--------------|-----|-------------------|-----------------
+K-DA|ODB-22|Normal VAT|36|0|22|260910
+K-DA|ODB-9,5|Normal VAT|35|0|9,5|260910
 
 ### Post Sales Invoice
 
@@ -28,7 +28,6 @@ K-DA|ODB-22|1.000,00
 -	Check posted General Ledger Entries.
 
 G/L Account No.|Amount
----------------|------
 760010|-1.000,00
 120010| 1.000,00
 
@@ -44,6 +43,9 @@ VAT %|VAT Amount Exl. VAT|VAT Amount|Amount Incl. VAT|VAT % Informative|VAT Amou
 -:|-:|-:|-:|-:|-:
 0|1.000|0,00|1.000,00|22|220,00
 
+### Test case acceptance criteria
+
+-	Informative VAT amount and Informative VAT % is printed on Sales Invoice and Sales Credit Memo.
 
 ### Error:
 
