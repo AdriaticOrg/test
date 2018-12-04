@@ -8,20 +8,26 @@
 -	Choose option Invoice on field Usage. Enter Report ID 13062751 to print Sales Invoice with additional data.
 -	Choose button Finish to confirm setup.
 
+Usage|Report ID
+-----|---------
+Invoice|13062751
+Credit Memo|13062752
+Shipment|13062753
+
 ### Posted Sales Invoice
 
 -	Open Posted Sales Invoices.
 -	Choose Posted Sales Invoice.
 -	Print Document.
 
-### Error:
+## Test case acceptance criteria
 
--	Place of issue is not printed on document.
--	Date of issue is not printed on document.
--	Shipment Date is not printed on document.
--	VAT registration for customer is not printed on document.
--	VAT Date is not printed on document.
--	VAT specification (also informative VAT) is not printed on document.
+-	Place of issue is printed on document.
+-	Date of issue is printed on document.
+-	Shipment Date is printed on document.
+-	VAT registration for customer is printed on document.
+-	VAT Date is printed on document.
+-	VAT specification (also informative VAT) is printed on document.
 
 ## CASE 2: Print Posted Sales Credit Memo
 
@@ -36,14 +42,14 @@
 -	Choose Posted Sales Credit Memo
 -	Print Document.
 
-### Error:
+## Test case acceptance criteria
 
--	Place of issue is not printed on document.
--	Date of issue is not printed on document.
--	Shipment Date is not printed on document.
--	VAT registration for customer is not printed on document.
--	VAT Date is not printed on document.
--	VAT specification (also informative VAT) is not printed on document.
+-	Place of issue is printed on document.
+-	Date of issue is printed on document.
+-	Shipment Date is printed on document.
+-	VAT registration for customer is printed on document.
+-	VAT Date is printed on document.
+-	VAT specification (also informative VAT) is printed on document.
 
 ## CASE 3:  Print Posted Shipment
 
@@ -58,10 +64,10 @@
 -	Choose Posted Sales Shipment
 -	Print Document.
 
-### Error:
+## Test case acceptance criteria
 
--	Place of issue is not printed on document.
--	Date of issue is not printed on document.
--	Shipment Date is not printed on document.
--	VAT registration for customer is not printed on document.
--	VAT specification (also informative VAT) is not printed on document.
+-	Place of issue is printed on document.
+-	Date of issue is printed on document.
+-	Shipment Date is printed on document.
+-	VAT registration for customer is printed on document.
+-	VAT specification (also informative VAT) is printed on document.
