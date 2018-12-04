@@ -11,8 +11,6 @@
 Usage|Report ID
 -----|---------
 Invoice|13062751
-Credit Memo|13062752
-Shipment|13062753
 
 ### Posted Sales Invoice
 
@@ -41,6 +39,10 @@ VAT %|VAT Amount Exl. VAT|VAT Amount|Amount Incl. VAT|VAT % Informative|VAT Amou
 -	Choose option Credit Memo on field Usage. Enter Report ID 13062752 to print Sales Credit Memo with additional data.
 -	Choose button Finish to confirm setup.
 
+Usage|Report ID
+-----|---------
+Credit Memo|13062752
+
 ### Open Posted Sales Credit Memo
 
 -	Choose Posted Sales Credit Memo
@@ -66,6 +68,10 @@ VAT %|VAT Amount Exl. VAT|VAT Amount|Amount Incl. VAT|VAT % Informative|VAT Amou
 -	Open page Report Selection - Sales.
 -	Choose option Shipment on field Usage. Enter Report ID 13062753 to print Shipment with additional data.
 -	Choose button Finish to confirm setup.
+
+Usage|Report ID
+-----|---------
+Shipment|13062753
 
 ### Open Posted Shipment
 
