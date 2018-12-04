@@ -29,6 +29,10 @@ Shipment|13062753
 -	VAT Date is printed on document.
 -	VAT specification (also informative VAT) is printed on document.
 
+VAT %|VAT Amount Exl. VAT|VAT Amount|Amount Incl. VAT|VAT % Informative|VAT Amount (Informative)
+-:|-:|-:|-:|-:|-:
+0|1.000|0,00|1.000,00|22|220,00
+
 ## CASE 2: Print Posted Sales Credit Memo
 
 ### Report Selection
@@ -51,6 +55,10 @@ Shipment|13062753
 -	VAT Date is printed on document.
 -	VAT specification (also informative VAT) is printed on document.
 
+VAT %|VAT Amount Exl. VAT|VAT Amount|Amount Incl. VAT|VAT % Informative|VAT Amount (Informative)
+-:|-:|-:|-:|-:|-:
+0|1.000|0,00|1.000,00|22|220,00
+
 ## CASE 3:  Print Posted Shipment
 
 ### Report Selection
@@ -69,5 +77,3 @@ Shipment|13062753
 -	Place of issue is printed on document.
 -	Date of issue is printed on document.
 -	Shipment Date is printed on document.
--	VAT registration for customer is printed on document.
--	VAT specification (also informative VAT) is printed on document.
