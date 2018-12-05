@@ -43,10 +43,10 @@
 -	Until Due Date: enter date after Due Date
 -	Choose User
 
-### Error:
+## Test case acceptance criteria
 
--	Customer Ledger Entry doesn't have entered amounts in 
-additional fields in ext. Table 21 so entries can't be printed.
+-	Customer Ledger Entry has entered amounts in 
+additional fields in ext. Table 21 so entries can be printed.
 
 ## CASE 2
 
@@ -90,9 +90,9 @@ additional fields in ext. Table 21 so entries can't be printed.
 -	Until Due Date: enter date after Due Date
 -	Choose User
 
-### Error:
+## Test case acceptance criteria
 
--	Customer Ledger Entry doesn't have entered amounts in additional fields in ext. Table 21 so entries can't be printed.
+-	Customer Ledger Entry has entered amounts in additional fields in ext. Table 21 so entries can be printed.
 
 ## CASE 3
 
@@ -123,6 +123,6 @@ additional fields in ext. Table 21 so entries can't be printed.
 -	Until Due Date: enter date after Due Date
 -	Choose User
 
-### Error:
+## Test case acceptance criteria
 
--	Fields can't be printed from posted document.
+-	Fields can be printed from posted document.

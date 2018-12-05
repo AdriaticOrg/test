@@ -24,10 +24,10 @@
 -	Open Posted Purchase Receipt.
 -	Check General Ledger Entries.
 
-### Error:
+## Test case acceptance criteria
 
--	Open Value Entries. Entries are not set as correction.
--	Open General Ledger Entries. All entries are posted as positive amount in debit or credit amount.
+-	Open Value Entries. Entries are set as correction.
+-	Open General Ledger Entries. All entries are posted as negative amount in debit or credit amount.
 
 ## CASE 2: Posting of red reversal while undo sales shipment
 
@@ -48,7 +48,7 @@
 -	Open Posted Sales Shipment.
 -	Check General Ledger Entries.
 
-### Error:
+## Test case acceptance criteria
 
--	Open Value Entries. Entries are not set as correction.
--	Open General Ledger Entries. All entries are posted as positive amount in debit or credit amount.
+-	Open Value Entries. Entries are set as correction.
+-	Open General Ledger Entries. All entries are posted as negative amount in debit or credit amount.

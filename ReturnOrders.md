@@ -14,9 +14,9 @@
 -	Enter Item on lines.
 -	Goods Return Type: choose entered value
 
-### Error:
+## Test case acceptance criteria
 
-VAT Business Group is not changed on Sales Header.
+VAT Business Group is changed on Sales Header.
 
 ## CASE 2: Changing VAT Business Group on Purchase document
 
@@ -32,7 +32,7 @@ VAT Business Group is not changed on Sales Header.
 -	Enter Item on lines.
 -	Goods Return Type: choose entered value
 
-### Error:
+## Test case acceptance criteria
 
-VAT Business Group is not changed on Purchase Header.
+VAT Business Group is changed on Purchase Header.
 

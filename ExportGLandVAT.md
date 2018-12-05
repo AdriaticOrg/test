@@ -9,10 +9,10 @@
 -	Enter Date Filter.
 -	Export to TXT file.
 
-### Error:
+## Test case acceptance criteria
 
-TXT File is blank.
-TXT File has data that are outside chosen filter.
+TXT File is created.
+TXT File has data that are inside chosen filter.
 
 ## CASE 2: Export VAT Books
 
@@ -21,7 +21,7 @@ TXT File has data that are outside chosen filter.
 -	Enter Posting Date.
 -	Export to TXT file.
 
-### Error:
+## Test case acceptance criteria
 
-TXT File is blank.
-TXT File has data that are outside chosen filter.
+TXT File is created.
+TXT File has data that are inside chosen filter.

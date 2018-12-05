@@ -27,9 +27,9 @@
 -	Balance Account No.: G/L Account No.
 -	Post Journal
 
-### Error: 
+## Test case acceptance criteria
 
--	General Ledger Entry is posted to Credit Amount.
+-	General Ledger Entry is posted to Debit Amount.
 
 ## CASE 2: Post as Debit Amount
 
@@ -48,9 +48,9 @@
 -	Balance Account No.: G/L Account No.
 -	Post Journal
 
-### Error: 
+## Test case acceptance criteria
 
--	General Ledger Entry is posted to Debit Amount.
+-	General Ledger Entry is posted to Credit Amount.
 
 ## CASE 3: Post as Debit or Credit Amount
 
@@ -69,6 +69,6 @@
 -	Balance Account No.: G/L Account No.
 -	Post Journal
 
-### Error: 
+## Test case acceptance criteria
 
--	General Ledger Entry is posted to Debit Amount.
+-	General Ledger Entry is posted to Credit Amount.

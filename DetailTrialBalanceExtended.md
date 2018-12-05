@@ -9,7 +9,7 @@
 
 ### Run Detail Trial Balance-Adl (13062731) report
 
-### Error:
+## Test case acceptance criteria
 
--	Report doesn't have filled Posting User
--	Report doesn't have filled Posting Responsible Person
+-	Report has filled Posting User
+-	Report has filled Posting Responsible Person
